@@ -37,11 +37,15 @@ class TelegramBotApi {
   final Client client;
 
   TelegramBotApi(String token,
-      {void Function(Request)? onRequest,
+      {Uri? baseUrl,
+      void Function(Request)? onRequest,
       void Function(Response)? onResponse,
       void Function(ApiError)? onError})
       : client = Client(token,
-            onRequest: onRequest, onResponse: onResponse, onError: onError);
+            baseUrl: baseUrl,
+            onRequest: onRequest,
+            onResponse: onResponse,
+            onError: onError);
 
   Future<List<Update>> getUpdates(
           {int? offset,
