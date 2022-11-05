@@ -8,6 +8,13 @@ class RequestSetStickerPositionInSet extends Request {
       RequestParametersSetStickerPositionInSet parameters)
       : super(RequestMethod.setStickerPositionInSet, parameters);
 
+  factory RequestSetStickerPositionInSet.create(
+      {required String sticker, required int position}) {
+    final requestParameters = RequestParametersSetStickerPositionInSet(
+        sticker: sticker, position: position);
+    return RequestSetStickerPositionInSet(requestParameters);
+  }
+
   @override
   ResponseSetStickerPositionInSet respondFromJson(Map<String, dynamic> json) =>
       ResponseSetStickerPositionInSet.fromJson(json)..withRequest(this);

@@ -8,6 +8,15 @@ class RequestGetChatAdministrators extends Request {
       RequestParametersGetChatAdministrators parameters)
       : super(RequestMethod.getChatAdministrators, parameters);
 
+  factory RequestGetChatAdministrators.create(
+      {
+      // int | String
+      required Object chatId}) {
+    final requestParameters =
+        RequestParametersGetChatAdministrators(chatId: chatId);
+    return RequestGetChatAdministrators(requestParameters);
+  }
+
   @override
   ResponseGetChatAdministrators respondFromJson(Map<String, dynamic> json) =>
       ResponseGetChatAdministrators.fromJson(json)..withRequest(this);

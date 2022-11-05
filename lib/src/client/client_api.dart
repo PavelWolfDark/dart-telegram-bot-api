@@ -13,267 +13,182 @@ import '../models/message_entity.dart';
 import '../models/passport_element_error.dart';
 import '../models/reply_markup.dart';
 import '../models/shipping_option.dart';
-import 'methods/add_sticker_to_set/request_parameters.dart';
 import 'methods/add_sticker_to_set/request.dart';
 import 'methods/add_sticker_to_set/response.dart';
-import 'methods/answer_callback_query/request_parameters.dart';
 import 'methods/answer_callback_query/request.dart';
 import 'methods/answer_callback_query/response.dart';
-import 'methods/answer_inline_query/request_parameters.dart';
 import 'methods/answer_inline_query/request.dart';
 import 'methods/answer_inline_query/response.dart';
-import 'methods/answer_pre_checkout_query/request_parameters.dart';
 import 'methods/answer_pre_checkout_query/request.dart';
 import 'methods/answer_pre_checkout_query/response.dart';
-import 'methods/answer_shipping_query/request_parameters.dart';
 import 'methods/answer_shipping_query/request.dart';
 import 'methods/answer_shipping_query/response.dart';
-import 'methods/answer_web_app_query/request_parameters.dart';
 import 'methods/answer_web_app_query/request.dart';
 import 'methods/answer_web_app_query/response.dart';
-import 'methods/approve_chat_join_request/request_parameters.dart';
 import 'methods/approve_chat_join_request/request.dart';
 import 'methods/approve_chat_join_request/response.dart';
-import 'methods/ban_chat_member/request_parameters.dart';
 import 'methods/ban_chat_member/request.dart';
 import 'methods/ban_chat_member/response.dart';
-import 'methods/ban_chat_sender_chat/request_parameters.dart';
 import 'methods/ban_chat_sender_chat/request.dart';
 import 'methods/ban_chat_sender_chat/response.dart';
 import 'methods/close/request.dart';
 import 'methods/close/response.dart';
-import 'methods/copy_message/request_parameters.dart';
 import 'methods/copy_message/request.dart';
 import 'methods/copy_message/response.dart';
-import 'methods/create_chat_invite_link/request_parameters.dart';
 import 'methods/create_chat_invite_link/request.dart';
 import 'methods/create_chat_invite_link/response.dart';
-import 'methods/create_invoice_link/request_parameters.dart';
 import 'methods/create_invoice_link/request.dart';
 import 'methods/create_invoice_link/response.dart';
-import 'methods/create_new_sticker_set/request_parameters.dart';
 import 'methods/create_new_sticker_set/request.dart';
 import 'methods/create_new_sticker_set/response.dart';
-import 'methods/decline_chat_join_request/request_parameters.dart';
 import 'methods/decline_chat_join_request/request.dart';
 import 'methods/decline_chat_join_request/response.dart';
-import 'methods/delete_chat_photo/request_parameters.dart';
 import 'methods/delete_chat_photo/request.dart';
 import 'methods/delete_chat_photo/response.dart';
-import 'methods/delete_chat_sticker_set/request_parameters.dart';
 import 'methods/delete_chat_sticker_set/request.dart';
 import 'methods/delete_chat_sticker_set/response.dart';
-import 'methods/delete_message/request_parameters.dart';
 import 'methods/delete_message/request.dart';
 import 'methods/delete_message/response.dart';
-import 'methods/delete_my_commands/request_parameters.dart';
 import 'methods/delete_my_commands/request.dart';
 import 'methods/delete_my_commands/response.dart';
-import 'methods/delete_sticker_from_set/request_parameters.dart';
 import 'methods/delete_sticker_from_set/request.dart';
 import 'methods/delete_sticker_from_set/response.dart';
-import 'methods/delete_webhook/request_parameters.dart';
 import 'methods/delete_webhook/request.dart';
 import 'methods/delete_webhook/response.dart';
-import 'methods/edit_chat_invite_link/request_parameters.dart';
 import 'methods/edit_chat_invite_link/request.dart';
 import 'methods/edit_chat_invite_link/response.dart';
-import 'methods/edit_message_caption/request_parameters.dart';
 import 'methods/edit_message_caption/request.dart';
 import 'methods/edit_message_caption/response.dart';
-import 'methods/edit_message_live_location/request_parameters.dart';
 import 'methods/edit_message_live_location/request.dart';
 import 'methods/edit_message_live_location/response.dart';
-import 'methods/edit_message_media/request_parameters.dart';
 import 'methods/edit_message_media/request.dart';
 import 'methods/edit_message_media/response.dart';
-import 'methods/edit_message_reply_markup/request_parameters.dart';
 import 'methods/edit_message_reply_markup/request.dart';
 import 'methods/edit_message_reply_markup/response.dart';
-import 'methods/edit_message_text/request_parameters.dart';
 import 'methods/edit_message_text/request.dart';
 import 'methods/edit_message_text/response.dart';
-import 'methods/export_chat_invite_link/request_parameters.dart';
 import 'methods/export_chat_invite_link/request.dart';
 import 'methods/export_chat_invite_link/response.dart';
-import 'methods/forward_message/request_parameters.dart';
 import 'methods/forward_message/request.dart';
 import 'methods/forward_message/response.dart';
-import 'methods/get_chat/request_parameters.dart';
 import 'methods/get_chat/request.dart';
 import 'methods/get_chat/response.dart';
-import 'methods/get_chat_administrators/request_parameters.dart';
 import 'methods/get_chat_administrators/request.dart';
 import 'methods/get_chat_administrators/response.dart';
-import 'methods/get_chat_member/request_parameters.dart';
 import 'methods/get_chat_member/request.dart';
 import 'methods/get_chat_member/response.dart';
-import 'methods/get_chat_member_count/request_parameters.dart';
 import 'methods/get_chat_member_count/request.dart';
 import 'methods/get_chat_member_count/response.dart';
-import 'methods/get_chat_menu_button/request_parameters.dart';
 import 'methods/get_chat_menu_button/request.dart';
 import 'methods/get_chat_menu_button/response.dart';
-import 'methods/get_custom_emoji_stickers/request_parameters.dart';
 import 'methods/get_custom_emoji_stickers/request.dart';
 import 'methods/get_custom_emoji_stickers/response.dart';
-import 'methods/get_file/request_parameters.dart';
 import 'methods/get_file/request.dart';
 import 'methods/get_file/response.dart';
-import 'methods/get_game_high_scores/request_parameters.dart';
 import 'methods/get_game_high_scores/request.dart';
 import 'methods/get_game_high_scores/response.dart';
 import 'methods/get_me/request.dart';
 import 'methods/get_me/response.dart';
-import 'methods/get_my_commands/request_parameters.dart';
 import 'methods/get_my_commands/request.dart';
 import 'methods/get_my_commands/response.dart';
-import 'methods/get_my_default_administrator_rights/request_parameters.dart';
 import 'methods/get_my_default_administrator_rights/request.dart';
 import 'methods/get_my_default_administrator_rights/response.dart';
-import 'methods/get_sticker_set/request_parameters.dart';
 import 'methods/get_sticker_set/request.dart';
 import 'methods/get_sticker_set/response.dart';
-import 'methods/get_updates/request_parameters.dart';
 import 'methods/get_updates/request.dart';
 import 'methods/get_updates/response.dart';
-import 'methods/get_user_profile_photos/request_parameters.dart';
 import 'methods/get_user_profile_photos/request.dart';
 import 'methods/get_user_profile_photos/response.dart';
 import 'methods/get_webhook_info/request.dart';
 import 'methods/get_webhook_info/response.dart';
-import 'methods/leave_chat/request_parameters.dart';
 import 'methods/leave_chat/request.dart';
 import 'methods/leave_chat/response.dart';
 import 'methods/log_out/request.dart';
 import 'methods/log_out/response.dart';
-import 'methods/pin_chat_message/request_parameters.dart';
 import 'methods/pin_chat_message/request.dart';
 import 'methods/pin_chat_message/response.dart';
-import 'methods/promote_chat_member/request_parameters.dart';
 import 'methods/promote_chat_member/request.dart';
 import 'methods/promote_chat_member/response.dart';
-import 'methods/restrict_chat_member/request_parameters.dart';
 import 'methods/restrict_chat_member/request.dart';
 import 'methods/restrict_chat_member/response.dart';
-import 'methods/revoke_chat_invite_link/request_parameters.dart';
 import 'methods/revoke_chat_invite_link/request.dart';
 import 'methods/revoke_chat_invite_link/response.dart';
-import 'methods/send_animation/request_parameters.dart';
 import 'methods/send_animation/request.dart';
 import 'methods/send_animation/response.dart';
-import 'methods/send_audio/request_parameters.dart';
 import 'methods/send_audio/request.dart';
 import 'methods/send_audio/response.dart';
-import 'methods/send_chat_action/request_parameters.dart';
 import 'methods/send_chat_action/request.dart';
 import 'methods/send_chat_action/response.dart';
-import 'methods/send_contact/request_parameters.dart';
 import 'methods/send_contact/request.dart';
 import 'methods/send_contact/response.dart';
-import 'methods/send_dice/request_parameters.dart';
 import 'methods/send_dice/request.dart';
 import 'methods/send_dice/response.dart';
-import 'methods/send_document/request_parameters.dart';
 import 'methods/send_document/request.dart';
 import 'methods/send_document/response.dart';
-import 'methods/send_game/request_parameters.dart';
 import 'methods/send_game/request.dart';
 import 'methods/send_game/response.dart';
-import 'methods/send_invoice/request_parameters.dart';
 import 'methods/send_invoice/request.dart';
 import 'methods/send_invoice/response.dart';
-import 'methods/send_location/request_parameters.dart';
 import 'methods/send_location/request.dart';
 import 'methods/send_location/response.dart';
-import 'methods/send_media_group/request_parameters.dart';
 import 'methods/send_media_group/request.dart';
 import 'methods/send_media_group/response.dart';
-import 'methods/send_message/request_parameters.dart';
 import 'methods/send_message/request.dart';
 import 'methods/send_message/response.dart';
-import 'methods/send_photo/request_parameters.dart';
 import 'methods/send_photo/request.dart';
 import 'methods/send_photo/response.dart';
-import 'methods/send_poll/request_parameters.dart';
 import 'methods/send_poll/request.dart';
 import 'methods/send_poll/response.dart';
-import 'methods/send_sticker/request_parameters.dart';
 import 'methods/send_sticker/request.dart';
 import 'methods/send_sticker/response.dart';
-import 'methods/send_venue/request_parameters.dart';
 import 'methods/send_venue/request.dart';
 import 'methods/send_venue/response.dart';
-import 'methods/send_video/request_parameters.dart';
 import 'methods/send_video/request.dart';
 import 'methods/send_video/response.dart';
-import 'methods/send_video_note/request_parameters.dart';
 import 'methods/send_video_note/request.dart';
 import 'methods/send_video_note/response.dart';
-import 'methods/send_voice/request_parameters.dart';
 import 'methods/send_voice/request.dart';
 import 'methods/send_voice/response.dart';
-import 'methods/set_chat_administrator_custom_title/request_parameters.dart';
 import 'methods/set_chat_administrator_custom_title/request.dart';
 import 'methods/set_chat_administrator_custom_title/response.dart';
-import 'methods/set_chat_description/request_parameters.dart';
 import 'methods/set_chat_description/request.dart';
 import 'methods/set_chat_description/response.dart';
-import 'methods/set_chat_menu_button/request_parameters.dart';
 import 'methods/set_chat_menu_button/request.dart';
 import 'methods/set_chat_menu_button/response.dart';
-import 'methods/set_chat_permissions/request_parameters.dart';
 import 'methods/set_chat_permissions/request.dart';
 import 'methods/set_chat_permissions/response.dart';
-import 'methods/set_chat_photo/request_parameters.dart';
 import 'methods/set_chat_photo/request.dart';
 import 'methods/set_chat_photo/response.dart';
-import 'methods/set_chat_sticker_set/request_parameters.dart';
 import 'methods/set_chat_sticker_set/request.dart';
 import 'methods/set_chat_sticker_set/response.dart';
-import 'methods/set_chat_title/request_parameters.dart';
 import 'methods/set_chat_title/request.dart';
 import 'methods/set_chat_title/response.dart';
-import 'methods/set_game_score/request_parameters.dart';
 import 'methods/set_game_score/request.dart';
 import 'methods/set_game_score/response.dart';
-import 'methods/set_my_commands/request_parameters.dart';
 import 'methods/set_my_commands/request.dart';
 import 'methods/set_my_commands/response.dart';
-import 'methods/set_my_default_administrator_rights/request_parameters.dart';
 import 'methods/set_my_default_administrator_rights/request.dart';
 import 'methods/set_my_default_administrator_rights/response.dart';
-import 'methods/set_passport_data_errors/request_parameters.dart';
 import 'methods/set_passport_data_errors/request.dart';
 import 'methods/set_passport_data_errors/response.dart';
-import 'methods/set_sticker_position_in_set/request_parameters.dart';
 import 'methods/set_sticker_position_in_set/request.dart';
 import 'methods/set_sticker_position_in_set/response.dart';
-import 'methods/set_sticker_set_thumb/request_parameters.dart';
 import 'methods/set_sticker_set_thumb/request.dart';
 import 'methods/set_sticker_set_thumb/response.dart';
-import 'methods/set_webhook/request_parameters.dart';
 import 'methods/set_webhook/request.dart';
 import 'methods/set_webhook/response.dart';
-import 'methods/stop_message_live_location/request_parameters.dart';
 import 'methods/stop_message_live_location/request.dart';
 import 'methods/stop_message_live_location/response.dart';
-import 'methods/stop_poll/request_parameters.dart';
 import 'methods/stop_poll/request.dart';
 import 'methods/stop_poll/response.dart';
-import 'methods/unban_chat_member/request_parameters.dart';
 import 'methods/unban_chat_member/request.dart';
 import 'methods/unban_chat_member/response.dart';
-import 'methods/unban_chat_sender_chat/request_parameters.dart';
 import 'methods/unban_chat_sender_chat/request.dart';
 import 'methods/unban_chat_sender_chat/response.dart';
-import 'methods/unpin_all_chat_messages/request_parameters.dart';
 import 'methods/unpin_all_chat_messages/request.dart';
 import 'methods/unpin_all_chat_messages/response.dart';
-import 'methods/unpin_chat_message/request_parameters.dart';
 import 'methods/unpin_chat_message/request.dart';
 import 'methods/unpin_chat_message/response.dart';
-import 'methods/upload_sticker_file/request_parameters.dart';
 import 'methods/upload_sticker_file/request.dart';
 import 'methods/upload_sticker_file/response.dart';
 import 'client.dart';
@@ -281,7 +196,7 @@ import 'client.dart';
 class ClientApi {
   final Client _client;
 
-  ClientApi(this._client);
+  ClientApi(Client client) : _client = client;
 
   Future<ResponseGetUpdates> getUpdates(
       {int? offset,
@@ -289,12 +204,11 @@ class ClientApi {
       int? timeout,
       // List<UpdateType>
       List<String>? allowedUpdates}) {
-    final requestParameters = RequestParametersGetUpdates(
+    final request = RequestGetUpdates.create(
         offset: offset,
         limit: limit,
         timeout: timeout,
         allowedUpdates: allowedUpdates);
-    final request = RequestGetUpdates(requestParameters);
     return _client.send(request);
   }
 
@@ -307,7 +221,7 @@ class ClientApi {
       List<String>? allowedUpdates,
       bool? dropPendingUpdates,
       String? secretToken}) {
-    final requestParameters = RequestParametersSetWebhook(
+    final request = RequestSetWebhook.create(
         url: url,
         certificate: certificate,
         ipAddress: ipAddress,
@@ -315,14 +229,12 @@ class ClientApi {
         allowedUpdates: allowedUpdates,
         dropPendingUpdates: dropPendingUpdates,
         secretToken: secretToken);
-    final request = RequestSetWebhook(requestParameters);
     return _client.send(request);
   }
 
   Future<ResponseDeleteWebhook> deleteWebhook({bool? dropPendingUpdates}) {
-    final requestParameters =
-        RequestParametersDeleteWebhook(dropPendingUpdates: dropPendingUpdates);
-    final request = RequestDeleteWebhook(requestParameters);
+    final request =
+        RequestDeleteWebhook.create(dropPendingUpdates: dropPendingUpdates);
     return _client.send(request);
   }
 
@@ -360,7 +272,7 @@ class ClientApi {
       int? replyToMessageId,
       bool? allowSendingWithoutReply,
       ReplyMarkup? replyMarkup}) {
-    final requestParameters = RequestParametersSendMessage(
+    final request = RequestSendMessage.create(
         chatId: chatId,
         text: text,
         parseMode: parseMode,
@@ -371,7 +283,6 @@ class ClientApi {
         replyToMessageId: replyToMessageId,
         allowSendingWithoutReply: allowSendingWithoutReply,
         replyMarkup: replyMarkup);
-    final request = RequestSendMessage(requestParameters);
     return _client.send(request);
   }
 
@@ -384,13 +295,12 @@ class ClientApi {
       required int messageId,
       bool? disableNotification,
       bool? protectContent}) {
-    final requestParameters = RequestParametersForwardMessage(
+    final request = RequestForwardMessage.create(
         chatId: chatId,
         fromChatId: fromChatId,
         messageId: messageId,
         disableNotification: disableNotification,
         protectContent: protectContent);
-    final request = RequestForwardMessage(requestParameters);
     return _client.send(request);
   }
 
@@ -410,7 +320,7 @@ class ClientApi {
       int? replyToMessageId,
       bool? allowSendingWithoutReply,
       ReplyMarkup? replyMarkup}) {
-    final requestParameters = RequestParametersCopyMessage(
+    final request = RequestCopyMessage.create(
         chatId: chatId,
         fromChatId: fromChatId,
         messageId: messageId,
@@ -422,7 +332,6 @@ class ClientApi {
         replyToMessageId: replyToMessageId,
         allowSendingWithoutReply: allowSendingWithoutReply,
         replyMarkup: replyMarkup);
-    final request = RequestCopyMessage(requestParameters);
     return _client.send(request);
   }
 
@@ -441,7 +350,7 @@ class ClientApi {
       int? replyToMessageId,
       bool? allowSendingWithoutReply,
       ReplyMarkup? replyMarkup}) {
-    final requestParameters = RequestParametersSendPhoto(
+    final request = RequestSendPhoto.create(
         chatId: chatId,
         photo: photo,
         caption: caption,
@@ -452,7 +361,6 @@ class ClientApi {
         replyToMessageId: replyToMessageId,
         allowSendingWithoutReply: allowSendingWithoutReply,
         replyMarkup: replyMarkup);
-    final request = RequestSendPhoto(requestParameters);
     return _client.send(request);
   }
 
@@ -476,7 +384,7 @@ class ClientApi {
       int? replyToMessageId,
       bool? allowSendingWithoutReply,
       ReplyMarkup? replyMarkup}) {
-    final requestParameters = RequestParametersSendAudio(
+    final request = RequestSendAudio.create(
         chatId: chatId,
         audio: audio,
         caption: caption,
@@ -491,7 +399,6 @@ class ClientApi {
         replyToMessageId: replyToMessageId,
         allowSendingWithoutReply: allowSendingWithoutReply,
         replyMarkup: replyMarkup);
-    final request = RequestSendAudio(requestParameters);
     return _client.send(request);
   }
 
@@ -513,7 +420,7 @@ class ClientApi {
       int? replyToMessageId,
       bool? allowSendingWithoutReply,
       ReplyMarkup? replyMarkup}) {
-    final requestParameters = RequestParametersSendDocument(
+    final request = RequestSendDocument.create(
         chatId: chatId,
         document: document,
         thumb: thumb,
@@ -526,7 +433,6 @@ class ClientApi {
         replyToMessageId: replyToMessageId,
         allowSendingWithoutReply: allowSendingWithoutReply,
         replyMarkup: replyMarkup);
-    final request = RequestSendDocument(requestParameters);
     return _client.send(request);
   }
 
@@ -551,7 +457,7 @@ class ClientApi {
       int? replyToMessageId,
       bool? allowSendingWithoutReply,
       ReplyMarkup? replyMarkup}) {
-    final requestParameters = RequestParametersSendVideo(
+    final request = RequestSendVideo.create(
         chatId: chatId,
         video: video,
         duration: duration,
@@ -567,7 +473,6 @@ class ClientApi {
         replyToMessageId: replyToMessageId,
         allowSendingWithoutReply: allowSendingWithoutReply,
         replyMarkup: replyMarkup);
-    final request = RequestSendVideo(requestParameters);
     return _client.send(request);
   }
 
@@ -591,7 +496,7 @@ class ClientApi {
       int? replyToMessageId,
       bool? allowSendingWithoutReply,
       ReplyMarkup? replyMarkup}) {
-    final requestParameters = RequestParametersSendAnimation(
+    final request = RequestSendAnimation.create(
         chatId: chatId,
         animation: animation,
         duration: duration,
@@ -606,7 +511,6 @@ class ClientApi {
         replyToMessageId: replyToMessageId,
         allowSendingWithoutReply: allowSendingWithoutReply,
         replyMarkup: replyMarkup);
-    final request = RequestSendAnimation(requestParameters);
     return _client.send(request);
   }
 
@@ -626,7 +530,7 @@ class ClientApi {
       int? replyToMessageId,
       bool? allowSendingWithoutReply,
       ReplyMarkup? replyMarkup}) {
-    final requestParameters = RequestParametersSendVoice(
+    final request = RequestSendVoice.create(
         chatId: chatId,
         voice: voice,
         caption: caption,
@@ -638,7 +542,6 @@ class ClientApi {
         replyToMessageId: replyToMessageId,
         allowSendingWithoutReply: allowSendingWithoutReply,
         replyMarkup: replyMarkup);
-    final request = RequestSendVoice(requestParameters);
     return _client.send(request);
   }
 
@@ -657,7 +560,7 @@ class ClientApi {
       int? replyToMessageId,
       bool? allowSendingWithoutReply,
       ReplyMarkup? replyMarkup}) {
-    final requestParameters = RequestParametersSendVideoNote(
+    final request = RequestSendVideoNote.create(
         chatId: chatId,
         videoNote: videoNote,
         duration: duration,
@@ -668,7 +571,6 @@ class ClientApi {
         replyToMessageId: replyToMessageId,
         allowSendingWithoutReply: allowSendingWithoutReply,
         replyMarkup: replyMarkup);
-    final request = RequestSendVideoNote(requestParameters);
     return _client.send(request);
   }
 
@@ -681,14 +583,13 @@ class ClientApi {
       bool? protectContent,
       int? replyToMessageId,
       bool? allowSendingWithoutReply}) {
-    final requestParameters = RequestParametersSendMediaGroup(
+    final request = RequestSendMediaGroup.create(
         chatId: chatId,
         media: media,
         disableNotification: disableNotification,
         protectContent: protectContent,
         replyToMessageId: replyToMessageId,
         allowSendingWithoutReply: allowSendingWithoutReply);
-    final request = RequestSendMediaGroup(requestParameters);
     return _client.send(request);
   }
 
@@ -707,7 +608,7 @@ class ClientApi {
       int? replyToMessageId,
       bool? allowSendingWithoutReply,
       ReplyMarkup? replyMarkup}) {
-    final requestParameters = RequestParametersSendLocation(
+    final request = RequestSendLocation.create(
         chatId: chatId,
         latitude: latitude,
         longitude: longitude,
@@ -720,7 +621,6 @@ class ClientApi {
         replyToMessageId: replyToMessageId,
         allowSendingWithoutReply: allowSendingWithoutReply,
         replyMarkup: replyMarkup);
-    final request = RequestSendLocation(requestParameters);
     return _client.send(request);
   }
 
@@ -736,7 +636,7 @@ class ClientApi {
       int? heading,
       int? proximityAlertRadius,
       InlineKeyboardMarkup? replyMarkup}) {
-    final requestParameters = RequestParametersEditMessageLiveLocation(
+    final request = RequestEditMessageLiveLocation.create(
         chatId: chatId,
         messageId: messageId,
         inlineMessageId: inlineMessageId,
@@ -746,7 +646,6 @@ class ClientApi {
         heading: heading,
         proximityAlertRadius: proximityAlertRadius,
         replyMarkup: replyMarkup);
-    final request = RequestEditMessageLiveLocation(requestParameters);
     return _client.send(request);
   }
 
@@ -757,12 +656,11 @@ class ClientApi {
       int? messageId,
       String? inlineMessageId,
       InlineKeyboardMarkup? replyMarkup}) {
-    final requestParameters = RequestParametersStopMessageLiveLocation(
+    final request = RequestStopMessageLiveLocation.create(
         chatId: chatId,
         messageId: messageId,
         inlineMessageId: inlineMessageId,
         replyMarkup: replyMarkup);
-    final request = RequestStopMessageLiveLocation(requestParameters);
     return _client.send(request);
   }
 
@@ -783,7 +681,7 @@ class ClientApi {
       int? replyToMessageId,
       bool? allowSendingWithoutReply,
       ReplyMarkup? replyMarkup}) {
-    final requestParameters = RequestParametersSendVenue(
+    final request = RequestSendVenue.create(
         chatId: chatId,
         latitude: latitude,
         longitude: longitude,
@@ -798,7 +696,6 @@ class ClientApi {
         replyToMessageId: replyToMessageId,
         allowSendingWithoutReply: allowSendingWithoutReply,
         replyMarkup: replyMarkup);
-    final request = RequestSendVenue(requestParameters);
     return _client.send(request);
   }
 
@@ -815,7 +712,7 @@ class ClientApi {
       int? replyToMessageId,
       bool? allowSendingWithoutReply,
       ReplyMarkup? replyMarkup}) {
-    final requestParameters = RequestParametersSendContact(
+    final request = RequestSendContact.create(
         chatId: chatId,
         phoneNumber: phoneNumber,
         firstName: firstName,
@@ -826,7 +723,6 @@ class ClientApi {
         replyToMessageId: replyToMessageId,
         allowSendingWithoutReply: allowSendingWithoutReply,
         replyMarkup: replyMarkup);
-    final request = RequestSendContact(requestParameters);
     return _client.send(request);
   }
 
@@ -853,7 +749,7 @@ class ClientApi {
       int? replyToMessageId,
       bool? allowSendingWithoutReply,
       ReplyMarkup? replyMarkup}) {
-    final requestParameters = RequestParametersSendPoll(
+    final request = RequestSendPoll.create(
         chatId: chatId,
         question: question,
         options: options,
@@ -872,7 +768,6 @@ class ClientApi {
         replyToMessageId: replyToMessageId,
         allowSendingWithoutReply: allowSendingWithoutReply,
         replyMarkup: replyMarkup);
-    final request = RequestSendPoll(requestParameters);
     return _client.send(request);
   }
 
@@ -887,7 +782,7 @@ class ClientApi {
       int? replyToMessageId,
       bool? allowSendingWithoutReply,
       ReplyMarkup? replyMarkup}) {
-    final requestParameters = RequestParametersSendDice(
+    final request = RequestSendDice.create(
         chatId: chatId,
         emoji: emoji,
         disableNotification: disableNotification,
@@ -895,7 +790,6 @@ class ClientApi {
         replyToMessageId: replyToMessageId,
         allowSendingWithoutReply: allowSendingWithoutReply,
         replyMarkup: replyMarkup);
-    final request = RequestSendDice(requestParameters);
     return _client.send(request);
   }
 
@@ -905,23 +799,20 @@ class ClientApi {
       required Object chatId,
       // ChatAction
       required String action}) {
-    final requestParameters =
-        RequestParametersSendChatAction(chatId: chatId, action: action);
-    final request = RequestSendChatAction(requestParameters);
+    final request =
+        RequestSendChatAction.create(chatId: chatId, action: action);
     return _client.send(request);
   }
 
   Future<ResponseGetUserProfilePhotos> getUserProfilePhotos(
       {required int userId, int? offset, int? limit}) {
-    final requestParameters = RequestParametersGetUserProfilePhotos(
+    final request = RequestGetUserProfilePhotos.create(
         userId: userId, offset: offset, limit: limit);
-    final request = RequestGetUserProfilePhotos(requestParameters);
     return _client.send(request);
   }
 
   Future<ResponseGetFile> getFile({required String fileId}) {
-    final requestParameters = RequestParametersGetFile(fileId: fileId);
-    final request = RequestGetFile(requestParameters);
+    final request = RequestGetFile.create(fileId: fileId);
     return _client.send(request);
   }
 
@@ -932,12 +823,11 @@ class ClientApi {
       required int userId,
       int? untilDate,
       bool? revokeMessages}) {
-    final requestParameters = RequestParametersBanChatMember(
+    final request = RequestBanChatMember.create(
         chatId: chatId,
         userId: userId,
         untilDate: untilDate,
         revokeMessages: revokeMessages);
-    final request = RequestBanChatMember(requestParameters);
     return _client.send(request);
   }
 
@@ -947,9 +837,8 @@ class ClientApi {
       required Object chatId,
       required int userId,
       bool? onlyIfBanned}) {
-    final requestParameters = RequestParametersUnbanChatMember(
+    final request = RequestUnbanChatMember.create(
         chatId: chatId, userId: userId, onlyIfBanned: onlyIfBanned);
-    final request = RequestUnbanChatMember(requestParameters);
     return _client.send(request);
   }
 
@@ -960,12 +849,11 @@ class ClientApi {
       required int userId,
       required ChatPermissions permissions,
       int? untilDate}) {
-    final requestParameters = RequestParametersRestrictChatMember(
+    final request = RequestRestrictChatMember.create(
         chatId: chatId,
         userId: userId,
         permissions: permissions,
         untilDate: untilDate);
-    final request = RequestRestrictChatMember(requestParameters);
     return _client.send(request);
   }
 
@@ -985,7 +873,7 @@ class ClientApi {
       bool? canChangeInfo,
       bool? canInviteUsers,
       bool? canPinMessages}) {
-    final requestParameters = RequestParametersPromoteChatMember(
+    final request = RequestPromoteChatMember.create(
         chatId: chatId,
         userId: userId,
         isAnonymous: isAnonymous,
@@ -999,7 +887,6 @@ class ClientApi {
         canChangeInfo: canChangeInfo,
         canInviteUsers: canInviteUsers,
         canPinMessages: canPinMessages);
-    final request = RequestPromoteChatMember(requestParameters);
     return _client.send(request);
   }
 
@@ -1010,10 +897,9 @@ class ClientApi {
           required Object chatId,
           required int userId,
           required String customTitle}) {
-    final requestParameters = RequestParametersSetChatAdministratorCustomTitle(
+    final request = RequestSetChatAdministratorCustomTitle.create(
         chatId: chatId, userId: userId, customTitle: customTitle);
-    return _client
-        .send(RequestSetChatAdministratorCustomTitle(requestParameters));
+    return _client.send(request);
   }
 
   Future<ResponseBanChatSenderChat> banChatSenderChat(
@@ -1021,9 +907,8 @@ class ClientApi {
       // int | String
       required Object chatId,
       required int senderChatId}) {
-    final requestParameters = RequestParametersBanChatSenderChat(
+    final request = RequestBanChatSenderChat.create(
         chatId: chatId, senderChatId: senderChatId);
-    final request = RequestBanChatSenderChat(requestParameters);
     return _client.send(request);
   }
 
@@ -1032,9 +917,8 @@ class ClientApi {
       // int | String
       required Object chatId,
       required int senderChatId}) {
-    final requestParameters = RequestParametersUnbanChatSenderChat(
+    final request = RequestUnbanChatSenderChat.create(
         chatId: chatId, senderChatId: senderChatId);
-    final request = RequestUnbanChatSenderChat(requestParameters);
     return _client.send(request);
   }
 
@@ -1043,9 +927,8 @@ class ClientApi {
       // int | String
       required Object chatId,
       required ChatPermissions permissions}) {
-    final requestParameters = RequestParametersSetChatPermissions(
+    final request = RequestSetChatPermissions.create(
         chatId: chatId, permissions: permissions);
-    final request = RequestSetChatPermissions(requestParameters);
     return _client.send(request);
   }
 
@@ -1053,9 +936,7 @@ class ClientApi {
       {
       // int | String
       required Object chatId}) {
-    final requestParameters =
-        RequestParametersExportChatInviteLink(chatId: chatId);
-    final request = RequestExportChatInviteLink(requestParameters);
+    final request = RequestExportChatInviteLink.create(chatId: chatId);
     return _client.send(request);
   }
 
@@ -1067,13 +948,12 @@ class ClientApi {
       int? expireDate,
       int? memberLimit,
       bool? createsJoinRequest}) {
-    final requestParameters = RequestParametersCreateChatInviteLink(
+    final request = RequestCreateChatInviteLink.create(
         chatId: chatId,
         name: name,
         expireDate: expireDate,
         memberLimit: memberLimit,
         createsJoinRequest: createsJoinRequest);
-    final request = RequestCreateChatInviteLink(requestParameters);
     return _client.send(request);
   }
 
@@ -1086,14 +966,13 @@ class ClientApi {
       int? expireDate,
       int? memberLimit,
       bool? createsJoinRequest}) {
-    final requestParameters = RequestParametersEditChatInviteLink(
+    final request = RequestEditChatInviteLink.create(
         chatId: chatId,
         inviteLink: inviteLink,
         name: name,
         expireDate: expireDate,
         memberLimit: memberLimit,
         createsJoinRequest: createsJoinRequest);
-    final request = RequestEditChatInviteLink(requestParameters);
     return _client.send(request);
   }
 
@@ -1102,9 +981,8 @@ class ClientApi {
       // int | String
       required Object chatId,
       required String inviteLink}) {
-    final requestParameters = RequestParametersRevokeChatInviteLink(
+    final request = RequestRevokeChatInviteLink.create(
         chatId: chatId, inviteLink: inviteLink);
-    final request = RequestRevokeChatInviteLink(requestParameters);
     return _client.send(request);
   }
 
@@ -1113,9 +991,8 @@ class ClientApi {
       // int | String
       required Object chatId,
       required int userId}) {
-    final requestParameters =
-        RequestParametersApproveChatJoinRequest(chatId: chatId, userId: userId);
-    final request = RequestApproveChatJoinRequest(requestParameters);
+    final request =
+        RequestApproveChatJoinRequest.create(chatId: chatId, userId: userId);
     return _client.send(request);
   }
 
@@ -1124,9 +1001,8 @@ class ClientApi {
       // int | String
       required Object chatId,
       required int userId}) {
-    final requestParameters =
-        RequestParametersDeclineChatJoinRequest(chatId: chatId, userId: userId);
-    final request = RequestDeclineChatJoinRequest(requestParameters);
+    final request =
+        RequestDeclineChatJoinRequest.create(chatId: chatId, userId: userId);
     return _client.send(request);
   }
 
@@ -1135,9 +1011,7 @@ class ClientApi {
       // int | String
       required Object chatId,
       required InputFile photo}) {
-    final requestParameters =
-        RequestParametersSetChatPhoto(chatId: chatId, photo: photo);
-    final request = RequestSetChatPhoto(requestParameters);
+    final request = RequestSetChatPhoto.create(chatId: chatId, photo: photo);
     return _client.send(request);
   }
 
@@ -1145,8 +1019,7 @@ class ClientApi {
       {
       // int | String
       required Object chatId}) {
-    final requestParameters = RequestParametersDeleteChatPhoto(chatId: chatId);
-    final request = RequestDeleteChatPhoto(requestParameters);
+    final request = RequestDeleteChatPhoto.create(chatId: chatId);
     return _client.send(request);
   }
 
@@ -1155,9 +1028,7 @@ class ClientApi {
       // int | String
       required Object chatId,
       required String title}) {
-    final requestParameters =
-        RequestParametersSetChatTitle(chatId: chatId, title: title);
-    final request = RequestSetChatTitle(requestParameters);
+    final request = RequestSetChatTitle.create(chatId: chatId, title: title);
     return _client.send(request);
   }
 
@@ -1166,9 +1037,8 @@ class ClientApi {
       // int | String
       required Object chatId,
       String? description}) {
-    final requestParameters = RequestParametersSetChatDescription(
+    final request = RequestSetChatDescription.create(
         chatId: chatId, description: description);
-    final request = RequestSetChatDescription(requestParameters);
     return _client.send(request);
   }
 
@@ -1178,11 +1048,10 @@ class ClientApi {
       required Object chatId,
       required int messageId,
       bool? disableNotification}) {
-    final requestParameters = RequestParametersPinChatMessage(
+    final request = RequestPinChatMessage.create(
         chatId: chatId,
         messageId: messageId,
         disableNotification: disableNotification);
-    final request = RequestPinChatMessage(requestParameters);
     return _client.send(request);
   }
 
@@ -1191,9 +1060,8 @@ class ClientApi {
       // int | String
       required Object chatId,
       required int messageId}) {
-    final requestParameters =
-        RequestParametersUnpinChatMessage(chatId: chatId, messageId: messageId);
-    final request = RequestUnpinChatMessage(requestParameters);
+    final request =
+        RequestUnpinChatMessage.create(chatId: chatId, messageId: messageId);
     return _client.send(request);
   }
 
@@ -1201,9 +1069,7 @@ class ClientApi {
       {
       // int | String
       required Object chatId}) {
-    final requestParameters =
-        RequestParametersUnpinAllChatMessages(chatId: chatId);
-    final request = RequestUnpinAllChatMessages(requestParameters);
+    final request = RequestUnpinAllChatMessages.create(chatId: chatId);
     return _client.send(request);
   }
 
@@ -1211,8 +1077,7 @@ class ClientApi {
       {
       // int | String
       required Object chatId}) {
-    final requestParameters = RequestParametersLeaveChat(chatId: chatId);
-    final request = RequestLeaveChat(requestParameters);
+    final request = RequestLeaveChat.create(chatId: chatId);
     return _client.send(request);
   }
 
@@ -1220,8 +1085,7 @@ class ClientApi {
       {
       // int | String
       required Object chatId}) {
-    final requestParameters = RequestParametersGetChat(chatId: chatId);
-    final request = RequestGetChat(requestParameters);
+    final request = RequestGetChat.create(chatId: chatId);
     return _client.send(request);
   }
 
@@ -1229,9 +1093,7 @@ class ClientApi {
       {
       // int | String
       required Object chatId}) {
-    final requestParameters =
-        RequestParametersGetChatAdministrators(chatId: chatId);
-    final request = RequestGetChatAdministrators(requestParameters);
+    final request = RequestGetChatAdministrators.create(chatId: chatId);
     return _client.send(request);
   }
 
@@ -1239,9 +1101,7 @@ class ClientApi {
       {
       // int | String
       required Object chatId}) {
-    final requestParameters =
-        RequestParametersGetChatMemberCount(chatId: chatId);
-    final request = RequestGetChatMemberCount(requestParameters);
+    final request = RequestGetChatMemberCount.create(chatId: chatId);
     return _client.send(request);
   }
 
@@ -1250,9 +1110,7 @@ class ClientApi {
       // int | String
       required Object chatId,
       required int userId}) {
-    final requestParameters =
-        RequestParametersGetChatMember(chatId: chatId, userId: userId);
-    final request = RequestGetChatMember(requestParameters);
+    final request = RequestGetChatMember.create(chatId: chatId, userId: userId);
     return _client.send(request);
   }
 
@@ -1261,9 +1119,8 @@ class ClientApi {
       // int | String
       required Object chatId,
       required String stickerSetName}) {
-    final requestParameters = RequestParametersSetChatStickerSet(
+    final request = RequestSetChatStickerSet.create(
         chatId: chatId, stickerSetName: stickerSetName);
-    final request = RequestSetChatStickerSet(requestParameters);
     return _client.send(request);
   }
 
@@ -1271,9 +1128,7 @@ class ClientApi {
       {
       // int | String
       required Object chatId}) {
-    final requestParameters =
-        RequestParametersDeleteChatStickerSet(chatId: chatId);
-    final request = RequestDeleteChatStickerSet(requestParameters);
+    final request = RequestDeleteChatStickerSet.create(chatId: chatId);
     return _client.send(request);
   }
 
@@ -1283,13 +1138,12 @@ class ClientApi {
       bool? showAlert,
       String? url,
       int? cacheTime}) {
-    final requestParameters = RequestParametersAnswerCallbackQuery(
+    final request = RequestAnswerCallbackQuery.create(
         callbackQueryId: callbackQueryId,
         text: text,
         showAlert: showAlert,
         url: url,
         cacheTime: cacheTime);
-    final request = RequestAnswerCallbackQuery(requestParameters);
     return _client.send(request);
   }
 
@@ -1297,58 +1151,50 @@ class ClientApi {
       {required List<BotCommand> commands,
       BotCommandScope? scope,
       String? languageCode}) {
-    final requestParameters = RequestParametersSetMyCommands(
+    final request = RequestSetMyCommands.create(
         commands: commands, scope: scope, languageCode: languageCode);
-    final request = RequestSetMyCommands(requestParameters);
     return _client.send(request);
   }
 
   Future<ResponseDeleteMyCommands> deleteMyCommands(
       {BotCommandScope? scope, String? languageCode}) {
-    final requestParameters = RequestParametersDeleteMyCommands(
+    final request = RequestDeleteMyCommands.create(
         scope: scope, languageCode: languageCode);
-    final request = RequestDeleteMyCommands(requestParameters);
     return _client.send(request);
   }
 
   Future<ResponseGetMyCommands> getMyCommands(
       {BotCommandScope? scope, String? languageCode}) {
-    final requestParameters = RequestParametersGetMyCommands(
-        scope: scope, languageCode: languageCode);
-    final request = RequestGetMyCommands(requestParameters);
+    final request =
+        RequestGetMyCommands.create(scope: scope, languageCode: languageCode);
     return _client.send(request);
   }
 
   Future<ResponseSetChatMenuButton> setChatMenuButton(
       {int? chatId, MenuButton? menuButton}) {
-    final requestParameters = RequestParametersSetChatMenuButton(
-        chatId: chatId, menuButton: menuButton);
-    final request = RequestSetChatMenuButton(requestParameters);
+    final request =
+        RequestSetChatMenuButton.create(chatId: chatId, menuButton: menuButton);
     return _client.send(request);
   }
 
   Future<ResponseGetChatMenuButton> getChatMenuButton({int? chatId}) {
-    final requestParameters =
-        RequestParametersGetChatMenuButton(chatId: chatId);
-    final request = RequestGetChatMenuButton(requestParameters);
+    final request = RequestGetChatMenuButton.create(chatId: chatId);
     return _client.send(request);
   }
 
   Future<ResponseSetMyDefaultAdministratorRights>
       setMyDefaultAdministratorRights(
           {ChatAdministratorRights? rights, bool? forChannels}) {
-    final requestParameters = RequestParametersSetMyDefaultAdministratorRights(
+    final request = RequestSetMyDefaultAdministratorRights.create(
         rights: rights, forChannels: forChannels);
-    return _client
-        .send(RequestSetMyDefaultAdministratorRights(requestParameters));
+    return _client.send(request);
   }
 
   Future<ResponseGetMyDefaultAdministratorRights>
       getMyDefaultAdministratorRights({bool? forChannels}) {
-    final requestParameters = RequestParametersGetMyDefaultAdministratorRights(
-        forChannels: forChannels);
-    return _client
-        .send(RequestGetMyDefaultAdministratorRights(requestParameters));
+    final request =
+        RequestGetMyDefaultAdministratorRights.create(forChannels: forChannels);
+    return _client.send(request);
   }
 
   Future<ResponseEditMessageText> editMessageText(
@@ -1363,7 +1209,7 @@ class ClientApi {
       List<MessageEntity>? entities,
       bool? disableWebPagePreview,
       InlineKeyboardMarkup? replyMarkup}) {
-    final requestParameters = RequestParametersEditMessageText(
+    final request = RequestEditMessageText.create(
         chatId: chatId,
         messageId: messageId,
         inlineMessageId: inlineMessageId,
@@ -1372,7 +1218,6 @@ class ClientApi {
         entities: entities,
         disableWebPagePreview: disableWebPagePreview,
         replyMarkup: replyMarkup);
-    final request = RequestEditMessageText(requestParameters);
     return _client.send(request);
   }
 
@@ -1387,7 +1232,7 @@ class ClientApi {
       String? parseMode,
       List<MessageEntity>? captionEntities,
       InlineKeyboardMarkup? replyMarkup}) {
-    final requestParameters = RequestParametersEditMessageCaption(
+    final request = RequestEditMessageCaption.create(
         chatId: chatId,
         messageId: messageId,
         inlineMessageId: inlineMessageId,
@@ -1395,7 +1240,6 @@ class ClientApi {
         parseMode: parseMode,
         captionEntities: captionEntities,
         replyMarkup: replyMarkup);
-    final request = RequestEditMessageCaption(requestParameters);
     return _client.send(request);
   }
 
@@ -1407,13 +1251,12 @@ class ClientApi {
       String? inlineMessageId,
       required InputMedia media,
       InlineKeyboardMarkup? replyMarkup}) {
-    final requestParameters = RequestParametersEditMessageMedia(
+    final request = RequestEditMessageMedia.create(
         chatId: chatId,
         messageId: messageId,
         inlineMessageId: inlineMessageId,
         media: media,
         replyMarkup: replyMarkup);
-    final request = RequestEditMessageMedia(requestParameters);
     return _client.send(request);
   }
 
@@ -1424,12 +1267,11 @@ class ClientApi {
       int? messageId,
       String? inlineMessageId,
       InlineKeyboardMarkup? replyMarkup}) {
-    final requestParameters = RequestParametersEditMessageReplyMarkup(
+    final request = RequestEditMessageReplyMarkup.create(
         chatId: chatId,
         messageId: messageId,
         inlineMessageId: inlineMessageId,
         replyMarkup: replyMarkup);
-    final request = RequestEditMessageReplyMarkup(requestParameters);
     return _client.send(request);
   }
 
@@ -1439,9 +1281,8 @@ class ClientApi {
       required Object chatId,
       required int messageId,
       InlineKeyboardMarkup? replyMarkup}) {
-    final requestParameters = RequestParametersStopPoll(
+    final request = RequestStopPoll.create(
         chatId: chatId, messageId: messageId, replyMarkup: replyMarkup);
-    final request = RequestStopPoll(requestParameters);
     return _client.send(request);
   }
 
@@ -1450,9 +1291,8 @@ class ClientApi {
       // int | String
       required Object chatId,
       required int messageId}) {
-    final requestParameters =
-        RequestParametersDeleteMessage(chatId: chatId, messageId: messageId);
-    final request = RequestDeleteMessage(requestParameters);
+    final request =
+        RequestDeleteMessage.create(chatId: chatId, messageId: messageId);
     return _client.send(request);
   }
 
@@ -1467,7 +1307,7 @@ class ClientApi {
       int? replyToMessageId,
       bool? allowSendingWithoutReply,
       ReplyMarkup? replyMarkup}) {
-    final requestParameters = RequestParametersSendSticker(
+    final request = RequestSendSticker.create(
         chatId: chatId,
         sticker: sticker,
         disableNotification: disableNotification,
@@ -1475,29 +1315,25 @@ class ClientApi {
         replyToMessageId: replyToMessageId,
         allowSendingWithoutReply: allowSendingWithoutReply,
         replyMarkup: replyMarkup);
-    final request = RequestSendSticker(requestParameters);
     return _client.send(request);
   }
 
   Future<ResponseGetStickerSet> getStickerSet({required String name}) {
-    final requestParameters = RequestParametersGetStickerSet(name: name);
-    final request = RequestGetStickerSet(requestParameters);
+    final request = RequestGetStickerSet.create(name: name);
     return _client.send(request);
   }
 
   Future<ResponseGetCustomEmojiStickers> getCustomEmojiStickers(
       {required List<String> customEmojiIds}) {
-    final requestParameters =
-        RequestParametersGetCustomEmojiStickers(customEmojiIds: customEmojiIds);
-    final request = RequestGetCustomEmojiStickers(requestParameters);
+    final request =
+        RequestGetCustomEmojiStickers.create(customEmojiIds: customEmojiIds);
     return _client.send(request);
   }
 
   Future<ResponseUploadStickerFile> uploadStickerFile(
       {required int userId, required InputFile pngSticker}) {
-    final requestParameters = RequestParametersUploadStickerFile(
-        userId: userId, pngSticker: pngSticker);
-    final request = RequestUploadStickerFile(requestParameters);
+    final request =
+        RequestUploadStickerFile.create(userId: userId, pngSticker: pngSticker);
     return _client.send(request);
   }
 
@@ -1513,7 +1349,7 @@ class ClientApi {
       String? stickerType,
       required String emojis,
       MaskPosition? maskPosition}) {
-    final requestParameters = RequestParametersCreateNewStickerSet(
+    final request = RequestCreateNewStickerSet.create(
         userId: userId,
         name: name,
         title: title,
@@ -1523,7 +1359,6 @@ class ClientApi {
         stickerType: stickerType,
         emojis: emojis,
         maskPosition: maskPosition);
-    final request = RequestCreateNewStickerSet(requestParameters);
     return _client.send(request);
   }
 
@@ -1536,7 +1371,7 @@ class ClientApi {
       InputFile? webmSticker,
       required String emojis,
       MaskPosition? maskPosition}) {
-    final requestParameters = RequestParametersAddStickerToSet(
+    final request = RequestAddStickerToSet.create(
         userId: userId,
         name: name,
         pngSticker: pngSticker,
@@ -1544,23 +1379,19 @@ class ClientApi {
         webmSticker: webmSticker,
         emojis: emojis,
         maskPosition: maskPosition);
-    final request = RequestAddStickerToSet(requestParameters);
     return _client.send(request);
   }
 
   Future<ResponseSetStickerPositionInSet> setStickerPositionInSet(
       {required String sticker, required int position}) {
-    final requestParameters = RequestParametersSetStickerPositionInSet(
+    final request = RequestSetStickerPositionInSet.create(
         sticker: sticker, position: position);
-    final request = RequestSetStickerPositionInSet(requestParameters);
     return _client.send(request);
   }
 
   Future<ResponseDeleteStickerFromSet> deleteStickerFromSet(
       {required String sticker}) {
-    final requestParameters =
-        RequestParametersDeleteStickerFromSet(sticker: sticker);
-    final request = RequestDeleteStickerFromSet(requestParameters);
+    final request = RequestDeleteStickerFromSet.create(sticker: sticker);
     return _client.send(request);
   }
 
@@ -1569,9 +1400,8 @@ class ClientApi {
       required int userId,
       // InputFile | String
       Object? thumb}) {
-    final requestParameters = RequestParametersSetStickerSetThumb(
+    final request = RequestSetStickerSetThumb.create(
         name: name, userId: userId, thumb: thumb);
-    final request = RequestSetStickerSetThumb(requestParameters);
     return _client.send(request);
   }
 
@@ -1583,7 +1413,7 @@ class ClientApi {
       String? nextOffset,
       String? switchPmText,
       String? switchPmParameter}) {
-    final requestParameters = RequestParametersAnswerInlineQuery(
+    final request = RequestAnswerInlineQuery.create(
         inlineQueryId: inlineQueryId,
         results: results,
         cacheTime: cacheTime,
@@ -1591,15 +1421,13 @@ class ClientApi {
         nextOffset: nextOffset,
         switchPmText: switchPmText,
         switchPmParameter: switchPmParameter);
-    final request = RequestAnswerInlineQuery(requestParameters);
     return _client.send(request);
   }
 
   Future<ResponseAnswerWebAppQuery> answerWebAppQuery(
       {required String webAppQueryId, required InlineQueryResult result}) {
-    final requestParameters = RequestParametersAnswerWebAppQuery(
+    final request = RequestAnswerWebAppQuery.create(
         webAppQueryId: webAppQueryId, result: result);
-    final request = RequestAnswerWebAppQuery(requestParameters);
     return _client.send(request);
   }
 
@@ -1632,7 +1460,7 @@ class ClientApi {
       int? replyToMessageId,
       bool? allowSendingWithoutReply,
       InlineKeyboardMarkup? replyMarkup}) {
-    final requestParameters = RequestParametersSendInvoice(
+    final request = RequestSendInvoice.create(
         chatId: chatId,
         title: title,
         description: description,
@@ -1659,7 +1487,6 @@ class ClientApi {
         replyToMessageId: replyToMessageId,
         allowSendingWithoutReply: allowSendingWithoutReply,
         replyMarkup: replyMarkup);
-    final request = RequestSendInvoice(requestParameters);
     return _client.send(request);
   }
 
@@ -1684,7 +1511,7 @@ class ClientApi {
       bool? sendPhoneNumberToProvider,
       bool? sendEmailToProvider,
       bool? isFlexible}) {
-    final requestParameters = RequestParametersCreateInvoiceLink(
+    final request = RequestCreateInvoiceLink.create(
         title: title,
         description: description,
         payload: payload,
@@ -1705,7 +1532,6 @@ class ClientApi {
         sendPhoneNumberToProvider: sendPhoneNumberToProvider,
         sendEmailToProvider: sendEmailToProvider,
         isFlexible: isFlexible);
-    final request = RequestCreateInvoiceLink(requestParameters);
     return _client.send(request);
   }
 
@@ -1714,12 +1540,11 @@ class ClientApi {
       required bool ok,
       List<ShippingOption>? shippingOptions,
       String? errorMessage}) {
-    final requestParameters = RequestParametersAnswerShippingQuery(
+    final request = RequestAnswerShippingQuery.create(
         shippingQueryId: shippingQueryId,
         ok: ok,
         shippingOptions: shippingOptions,
         errorMessage: errorMessage);
-    final request = RequestAnswerShippingQuery(requestParameters);
     return _client.send(request);
   }
 
@@ -1727,19 +1552,17 @@ class ClientApi {
       {required String preCheckoutQueryId,
       required bool ok,
       String? errorMessage}) {
-    final requestParameters = RequestParametersAnswerPreCheckoutQuery(
+    final request = RequestAnswerPreCheckoutQuery.create(
         preCheckoutQueryId: preCheckoutQueryId,
         ok: ok,
         errorMessage: errorMessage);
-    final request = RequestAnswerPreCheckoutQuery(requestParameters);
     return _client.send(request);
   }
 
   Future<ResponseSetPassportDataErrors> setPassportDataErrors(
       {required int userId, required List<PassportElementError> errors}) {
-    final requestParameters =
-        RequestParametersSetPassportDataErrors(userId: userId, errors: errors);
-    final request = RequestSetPassportDataErrors(requestParameters);
+    final request =
+        RequestSetPassportDataErrors.create(userId: userId, errors: errors);
     return _client.send(request);
   }
 
@@ -1751,7 +1574,7 @@ class ClientApi {
       int? replyToMessageId,
       bool? allowSendingWithoutReply,
       InlineKeyboardMarkup? replyMarkup}) {
-    final requestParameters = RequestParametersSendGame(
+    final request = RequestSendGame.create(
         chatId: chatId,
         gameShortName: gameShortName,
         disableNotification: disableNotification,
@@ -1759,7 +1582,6 @@ class ClientApi {
         replyToMessageId: replyToMessageId,
         allowSendingWithoutReply: allowSendingWithoutReply,
         replyMarkup: replyMarkup);
-    final request = RequestSendGame(requestParameters);
     return _client.send(request);
   }
 
@@ -1773,7 +1595,7 @@ class ClientApi {
       required int score,
       bool? force,
       bool? disableEditMessage}) {
-    final requestParameters = RequestParametersSetGameScore(
+    final request = RequestSetGameScore.create(
         chatId: chatId,
         messageId: messageId,
         inlineMessageId: inlineMessageId,
@@ -1781,7 +1603,6 @@ class ClientApi {
         score: score,
         force: force,
         disableEditMessage: disableEditMessage);
-    final request = RequestSetGameScore(requestParameters);
     return _client.send(request);
   }
 
@@ -1792,12 +1613,11 @@ class ClientApi {
       int? messageId,
       String? inlineMessageId,
       required int userId}) {
-    final requestParameters = RequestParametersGetGameHighScores(
+    final request = RequestGetGameHighScores.create(
         chatId: chatId,
         messageId: messageId,
         inlineMessageId: inlineMessageId,
         userId: userId);
-    final request = RequestGetGameHighScores(requestParameters);
     return _client.send(request);
   }
 }

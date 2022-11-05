@@ -8,6 +8,12 @@ class RequestGetMyDefaultAdministratorRights extends Request {
       [RequestParametersGetMyDefaultAdministratorRights? parameters])
       : super(RequestMethod.getMyDefaultAdministratorRights, parameters);
 
+  factory RequestGetMyDefaultAdministratorRights.create({bool? forChannels}) {
+    final requestParameters = RequestParametersGetMyDefaultAdministratorRights(
+        forChannels: forChannels);
+    return RequestGetMyDefaultAdministratorRights(requestParameters);
+  }
+
   @override
   ResponseGetMyDefaultAdministratorRights respondFromJson(
           Map<String, dynamic> json) =>
