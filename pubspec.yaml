@@ -1,13 +1,10 @@
 name: telegram_bot_api
-description: A starting point for Dart libraries or applications.
+description: Telegram Bot API Client.
 version: 1.0.0
-# homepage: https://www.example.com
+homepage: https://gitlab.darkwolf.cloud/cyberviking/dart-telegram-bot-api
 
 environment:
   sdk: '>=2.18.2 <3.0.0'
-
-# dependencies:
-#   path: ^1.8.0
 
 dev_dependencies:
   lints: ^2.0.0
