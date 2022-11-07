@@ -17,6 +17,7 @@ class RequestParametersPromoteChatMember implements RequestParameters {
   final bool? canChangeInfo;
   final bool? canInviteUsers;
   final bool? canPinMessages;
+  final bool? canManageTopics;
 
   RequestParametersPromoteChatMember(
       {required this.chatId,
@@ -31,7 +32,8 @@ class RequestParametersPromoteChatMember implements RequestParameters {
       this.canPromoteMembers,
       this.canChangeInfo,
       this.canInviteUsers,
-      this.canPinMessages});
+      this.canPinMessages,
+      this.canManageTopics});
 
   @override
   Map<String, dynamic> toJson() {
@@ -70,6 +72,9 @@ class RequestParametersPromoteChatMember implements RequestParameters {
     }
     if (canPinMessages != null) {
       json['can_pin_messages'] = canPinMessages;
+    }
+    if (canManageTopics != null) {
+      json['can_manage_topics'] = canManageTopics;
     }
     return json;
   }
@@ -111,6 +116,9 @@ class RequestParametersPromoteChatMember implements RequestParameters {
     }
     if (canPinMessages != null) {
       formData['can_pin_messages'] = canPinMessages.toString();
+    }
+    if (canManageTopics != null) {
+      formData['can_manage_topics'] = canManageTopics.toString();
     }
     return formData;
   }

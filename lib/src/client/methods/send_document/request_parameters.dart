@@ -7,6 +7,7 @@ import '../../request_parameters.dart';
 class RequestParametersSendDocument implements RequestParameters {
   // int | String
   final Object chatId;
+  final int? messageThreadId;
   // InputFile | String
   final Object document;
   // InputFile | String
@@ -27,6 +28,7 @@ class RequestParametersSendDocument implements RequestParameters {
 
   RequestParametersSendDocument(
       {required this.chatId,
+      this.messageThreadId,
       required this.document,
       this.thumb,
       this.caption,
@@ -43,6 +45,9 @@ class RequestParametersSendDocument implements RequestParameters {
   Map<String, dynamic> toJson() {
     Map<String, dynamic> json = {};
     json['chat_id'] = chatId;
+    if (messageThreadId != null) {
+      json['message_thread_id'] = messageThreadId;
+    }
     json['document'] = document;
     if (thumb != null) {
       json['thumb'] = thumb;
@@ -85,6 +90,9 @@ class RequestParametersSendDocument implements RequestParameters {
   Map<String, dynamic> toFormData() {
     Map<String, dynamic> formData = {};
     formData['chat_id'] = chatId.toString();
+    if (messageThreadId != null) {
+      formData['message_thread_id'] = messageThreadId.toString();
+    }
     formData['document'] = document;
     if (thumb != null) {
       formData['thumb'] = thumb;

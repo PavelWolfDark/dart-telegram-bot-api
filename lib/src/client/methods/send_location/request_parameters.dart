@@ -7,6 +7,7 @@ class RequestParametersSendLocation implements RequestParameters {
   final hasInputFiles = false;
   // int | String
   final Object chatId;
+  final int? messageThreadId;
   final double latitude;
   final double longitude;
   final double? horizontalAccuracy;
@@ -21,6 +22,7 @@ class RequestParametersSendLocation implements RequestParameters {
 
   RequestParametersSendLocation(
       {required this.chatId,
+      this.messageThreadId,
       required this.latitude,
       required this.longitude,
       this.horizontalAccuracy,
@@ -37,6 +39,9 @@ class RequestParametersSendLocation implements RequestParameters {
   Map<String, dynamic> toJson() {
     Map<String, dynamic> json = {};
     json['chat_id'] = chatId;
+    if (messageThreadId != null) {
+      json['message_thread_id'] = messageThreadId;
+    }
     json['latitude'] = latitude;
     json['longitude'] = longitude;
     if (horizontalAccuracy != null) {
@@ -73,6 +78,9 @@ class RequestParametersSendLocation implements RequestParameters {
   Map<String, String> toFormData() {
     Map<String, String> formData = {};
     formData['chat_id'] = chatId.toString();
+    if (messageThreadId != null) {
+      formData['message_thread_id'] = messageThreadId.toString();
+    }
     formData['latitude'] = latitude.toString();
     formData['longitude'] = longitude.toString();
     if (horizontalAccuracy != null) {

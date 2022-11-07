@@ -10,6 +10,7 @@ class ChatAdministratorRights {
   final bool? canPostMessages;
   final bool? canEditMessages;
   final bool? canPinMessages;
+  final bool? canManageTopics;
 
   ChatAdministratorRights(
       {required this.isAnonymous,
@@ -22,7 +23,8 @@ class ChatAdministratorRights {
       required this.canInviteUsers,
       this.canPostMessages,
       this.canEditMessages,
-      this.canPinMessages});
+      this.canPinMessages,
+      this.canManageTopics});
 
   factory ChatAdministratorRights.fromJson(Map<String, dynamic> json) =>
       ChatAdministratorRights(
@@ -36,7 +38,8 @@ class ChatAdministratorRights {
           canInviteUsers: json['can_invite_users'],
           canPostMessages: json['can_post_messages'],
           canEditMessages: json['can_edit_messages'],
-          canPinMessages: json['can_pin_messages']);
+          canPinMessages: json['can_pin_messages'],
+          canManageTopics: json['can_manage_topics']);
 
   Map<String, dynamic> toJson() {
     Map<String, dynamic> json = {};
@@ -56,6 +59,9 @@ class ChatAdministratorRights {
     }
     if (canPinMessages != null) {
       json['can_pin_messages'] = canPinMessages;
+    }
+    if (canManageTopics != null) {
+      json['can_manage_topics'] = canManageTopics;
     }
     return json;
   }

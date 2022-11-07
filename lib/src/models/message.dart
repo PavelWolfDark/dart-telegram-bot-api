@@ -20,6 +20,9 @@ import 'invoice.dart';
 import 'successful_payment.dart';
 import 'passport_data.dart';
 import 'proximity_alert_triggered.dart';
+import 'forum_topic_created.dart';
+import 'forum_topic_closed.dart';
+import 'forum_topic_reopened.dart';
 import 'video_chat_scheduled.dart';
 import 'video_chat_started.dart';
 import 'video_chat_ended.dart';
@@ -29,6 +32,7 @@ import 'inline_keyboard_markup.dart';
 
 class Message {
   final int messageId;
+  final int? messageThreadId;
   final User? from;
   final Chat? senderChat;
   final int date;
@@ -39,6 +43,7 @@ class Message {
   final String? forwardSignature;
   final String? forwardSenderName;
   final int? forwardDate;
+  final bool? isTopicMessage;
   final bool? isAutomaticForward;
   final Message? replyToMessage;
   final User? viaBot;
@@ -81,6 +86,9 @@ class Message {
   final String? connectedWebsite;
   final PassportData? passportData;
   final ProximityAlertTriggered? proximityAlertTriggered;
+  final ForumTopicCreated? forumTopicCreated;
+  final ForumTopicClosed? forumTopicClosed;
+  final ForumTopicReopened? forumTopicReopened;
   final VideoChatScheduled? videoChatScheduled;
   final VideoChatStarted? videoChatStarted;
   final VideoChatEnded? videoChatEnded;
@@ -90,6 +98,7 @@ class Message {
 
   Message(
       {required this.messageId,
+      this.messageThreadId,
       this.from,
       this.senderChat,
       required this.date,
@@ -100,6 +109,7 @@ class Message {
       this.forwardSignature,
       this.forwardSenderName,
       this.forwardDate,
+      this.isTopicMessage,
       this.isAutomaticForward,
       this.replyToMessage,
       this.viaBot,
@@ -142,6 +152,9 @@ class Message {
       this.connectedWebsite,
       this.passportData,
       this.proximityAlertTriggered,
+      this.forumTopicCreated,
+      this.forumTopicClosed,
+      this.forumTopicReopened,
       this.videoChatScheduled,
       this.videoChatStarted,
       this.videoChatEnded,
@@ -325,6 +338,21 @@ class Message {
       proximityAlertTriggered =
           ProximityAlertTriggered.fromJson(jsonProximityAlertTriggered);
     }
+    Map<String, dynamic>? jsonForumTopicCreated = json['forum_topic_created'];
+    ForumTopicCreated? forumTopicCreated;
+    if (jsonForumTopicCreated != null) {
+      forumTopicCreated = ForumTopicCreated.fromJson(jsonForumTopicCreated);
+    }
+    Map<String, dynamic>? jsonForumTopicClosed = json['forum_topic_closed'];
+    ForumTopicClosed? forumTopicClosed;
+    if (jsonForumTopicClosed != null) {
+      forumTopicClosed = ForumTopicClosed.fromJson(jsonForumTopicClosed);
+    }
+    Map<String, dynamic>? jsonForumTopicReopened = json['forum_topic_reopened'];
+    ForumTopicReopened? forumTopicReopened;
+    if (jsonForumTopicReopened != null) {
+      forumTopicReopened = ForumTopicReopened.fromJson(jsonForumTopicReopened);
+    }
     Map<String, dynamic>? jsonVideoChatScheduled = json['video_chat_scheduled'];
     VideoChatScheduled? videoChatScheduled;
     if (jsonVideoChatScheduled != null) {
@@ -359,6 +387,7 @@ class Message {
     }
     return Message(
         messageId: json['message_id'],
+        messageThreadId: json['message_thread_id'],
         from: from,
         senderChat: senderChat,
         date: json['date'],
@@ -369,6 +398,7 @@ class Message {
         forwardSignature: json['forward_signature'],
         forwardSenderName: json['forward_sender_name'],
         forwardDate: json['forward_date'],
+        isTopicMessage: json['is_topic_message'],
         isAutomaticForward: json['is_automatic_forward'],
         replyToMessage: replyToMessage,
         viaBot: viaBot,
@@ -411,6 +441,9 @@ class Message {
         connectedWebsite: json['connected_website'],
         passportData: passportData,
         proximityAlertTriggered: proximityAlertTriggered,
+        forumTopicCreated: forumTopicCreated,
+        forumTopicClosed: forumTopicClosed,
+        forumTopicReopened: forumTopicReopened,
         videoChatScheduled: videoChatScheduled,
         videoChatStarted: videoChatStarted,
         videoChatEnded: videoChatEnded,

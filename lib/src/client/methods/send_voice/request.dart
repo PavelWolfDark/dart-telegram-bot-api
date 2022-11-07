@@ -13,6 +13,7 @@ class RequestSendVoice extends Request {
       {
       // int | String
       required Object chatId,
+      int? messageThreadId,
       // InputFile | String
       required Object voice,
       String? caption,
@@ -27,6 +28,7 @@ class RequestSendVoice extends Request {
       ReplyMarkup? replyMarkup}) {
     final requestParameters = RequestParametersSendVoice(
         chatId: chatId,
+        messageThreadId: messageThreadId,
         voice: voice,
         caption: caption,
         parseMode: parseMode,

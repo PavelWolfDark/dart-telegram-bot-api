@@ -12,6 +12,7 @@ class RequestSendDice extends Request {
       {
       // int | String
       required Object chatId,
+      int? messageThreadId,
       // DiceEmoji
       String? emoji,
       bool? disableNotification,
@@ -21,6 +22,7 @@ class RequestSendDice extends Request {
       ReplyMarkup? replyMarkup}) {
     final requestParameters = RequestParametersSendDice(
         chatId: chatId,
+        messageThreadId: messageThreadId,
         emoji: emoji,
         disableNotification: disableNotification,
         protectContent: protectContent,

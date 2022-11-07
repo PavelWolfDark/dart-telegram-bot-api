@@ -13,6 +13,7 @@ class RequestSendPoll extends Request {
       {
       // int | String
       required Object chatId,
+      int? messageThreadId,
       required String question,
       required List<String> options,
       bool? isAnonymous,
@@ -34,6 +35,7 @@ class RequestSendPoll extends Request {
       ReplyMarkup? replyMarkup}) {
     final requestParameters = RequestParametersSendPoll(
         chatId: chatId,
+        messageThreadId: messageThreadId,
         question: question,
         options: options,
         isAnonymous: isAnonymous,

@@ -11,7 +11,10 @@ class Chat {
   final String? username;
   final String? firstName;
   final String? lastName;
+  final bool? isForum;
   final ChatPhoto? photo;
+  final List<String>? activeUsernames;
+  final String? emojiStatusCustomEmojiId;
   final String? bio;
   final bool? hasPrivateForwards;
   final bool? hasRestrictedVoiceAndVideoMessages;
@@ -36,7 +39,10 @@ class Chat {
       this.username,
       this.firstName,
       this.lastName,
+      this.isForum,
       this.photo,
+      this.activeUsernames,
+      this.emojiStatusCustomEmojiId,
       this.bio,
       this.hasPrivateForwards,
       this.hasRestrictedVoiceAndVideoMessages,
@@ -60,6 +66,11 @@ class Chat {
     if (jsonPhoto != null) {
       photo = ChatPhoto.fromJson(jsonPhoto);
     }
+    List<String>? jsonActiveUsernames = json['active_usernames'];
+    List<String>? activeUsernames;
+    if (jsonActiveUsernames != null) {
+      activeUsernames = [...jsonActiveUsernames];
+    }
     Map<String, dynamic>? jsonPinnedMessage = json['pinned_message'];
     Message? pinnedMessage;
     if (jsonPinnedMessage != null) {
@@ -82,7 +93,10 @@ class Chat {
         username: json['username'],
         firstName: json['first_name'],
         lastName: json['last_name'],
+        isForum: json['is_forum'],
         photo: photo,
+        activeUsernames: activeUsernames,
+        emojiStatusCustomEmojiId: json['emoji_status_custom_emoji_id'],
         bio: json['bio'],
         hasPrivateForwards: json['has_private_forwards'],
         hasRestrictedVoiceAndVideoMessages:

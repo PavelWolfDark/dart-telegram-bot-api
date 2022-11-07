@@ -6,6 +6,7 @@ class RequestParametersSendGame implements RequestParameters {
   @override
   final hasInputFiles = false;
   final int chatId;
+  final int? messageThreadId;
   final String gameShortName;
   final bool? disableNotification;
   final bool? protectContent;
@@ -15,6 +16,7 @@ class RequestParametersSendGame implements RequestParameters {
 
   RequestParametersSendGame(
       {required this.chatId,
+      this.messageThreadId,
       required this.gameShortName,
       this.disableNotification,
       this.protectContent,
@@ -26,6 +28,9 @@ class RequestParametersSendGame implements RequestParameters {
   Map<String, dynamic> toJson() {
     Map<String, dynamic> json = {};
     json['chat_id'] = chatId;
+    if (messageThreadId != null) {
+      json['message_thread_id'] = messageThreadId;
+    }
     json['game_short_name'] = gameShortName;
     if (disableNotification != null) {
       json['disable_notification'] = disableNotification;
@@ -49,6 +54,9 @@ class RequestParametersSendGame implements RequestParameters {
   Map<String, String> toFormData() {
     Map<String, String> formData = {};
     formData['chat_id'] = chatId.toString();
+    if (messageThreadId != null) {
+      formData['message_thread_id'] = messageThreadId.toString();
+    }
     formData['game_short_name'] = gameShortName;
     if (disableNotification != null) {
       formData['disable_notification'] = disableNotification.toString();

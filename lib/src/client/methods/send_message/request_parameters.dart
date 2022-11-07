@@ -8,6 +8,7 @@ class RequestParametersSendMessage implements RequestParameters {
   final hasInputFiles = false;
   // int | String
   final Object chatId;
+  final int? messageThreadId;
   final String text;
   // ParseMode
   final String? parseMode;
@@ -21,6 +22,7 @@ class RequestParametersSendMessage implements RequestParameters {
 
   RequestParametersSendMessage(
       {required this.chatId,
+      this.messageThreadId,
       required this.text,
       this.parseMode,
       this.entities,
@@ -35,6 +37,9 @@ class RequestParametersSendMessage implements RequestParameters {
   Map<String, dynamic> toJson() {
     Map<String, dynamic> json = {};
     json['chat_id'] = chatId;
+    if (messageThreadId != null) {
+      json['message_thread_id'] = messageThreadId;
+    }
     json['text'] = text;
     if (parseMode != null) {
       json['parse_mode'] = parseMode;
@@ -71,6 +76,9 @@ class RequestParametersSendMessage implements RequestParameters {
   Map<String, String> toFormData() {
     Map<String, String> formData = {};
     formData['chat_id'] = chatId.toString();
+    if (messageThreadId != null) {
+      formData['message_thread_id'] = messageThreadId.toString();
+    }
     formData['text'] = text;
     if (parseMode != null) {
       formData['parse_mode'] = parseMode!;

@@ -13,6 +13,7 @@ class RequestSendVideo extends Request {
       {
       // int | String
       required Object chatId,
+      int? messageThreadId,
       // InputFile | String
       required Object video,
       int? duration,
@@ -32,6 +33,7 @@ class RequestSendVideo extends Request {
       ReplyMarkup? replyMarkup}) {
     final requestParameters = RequestParametersSendVideo(
         chatId: chatId,
+        messageThreadId: messageThreadId,
         video: video,
         duration: duration,
         width: width,

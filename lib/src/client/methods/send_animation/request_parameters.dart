@@ -7,6 +7,7 @@ import '../../request_parameters.dart';
 class RequestParametersSendAnimation implements RequestParameters {
   // int | String
   final Object chatId;
+  final int? messageThreadId;
   // InputFile | String
   final Object animation;
   final int? duration;
@@ -29,6 +30,7 @@ class RequestParametersSendAnimation implements RequestParameters {
 
   RequestParametersSendAnimation(
       {required this.chatId,
+      this.messageThreadId,
       required this.animation,
       this.duration,
       this.width,
@@ -47,6 +49,9 @@ class RequestParametersSendAnimation implements RequestParameters {
   Map<String, dynamic> toJson() {
     Map<String, dynamic> json = {};
     json['chat_id'] = chatId;
+    if (messageThreadId != null) {
+      json['message_thread_id'] = messageThreadId;
+    }
     json['animation'] = animation;
     if (duration != null) {
       json['duration'] = duration;
@@ -95,6 +100,9 @@ class RequestParametersSendAnimation implements RequestParameters {
   Map<String, dynamic> toFormData() {
     Map<String, dynamic> formData = {};
     formData['chat_id'] = chatId.toString();
+    if (messageThreadId != null) {
+      formData['message_thread_id'] = messageThreadId.toString();
+    }
     formData['animation'] = animation;
     if (duration != null) {
       formData['duration'] = duration.toString();

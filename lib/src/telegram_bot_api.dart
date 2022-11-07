@@ -10,6 +10,7 @@ import 'models/chat_invite_link.dart';
 import 'models/chat_member.dart';
 import 'models/chat_permissions.dart';
 import 'models/file.dart';
+import 'models/forum_topic.dart';
 import 'models/game_high_score.dart';
 import 'models/inline_keyboard_markup.dart';
 import 'models/inline_query_result.dart';
@@ -99,6 +100,7 @@ class TelegramBotApi {
           {
           // int | String
           required Object chatId,
+          int? messageThreadId,
           required String text,
           // ParseMode
           String? parseMode,
@@ -111,6 +113,7 @@ class TelegramBotApi {
           ReplyMarkup? replyMarkup}) async =>
       (await client.api.sendMessage(
               chatId: chatId,
+              messageThreadId: messageThreadId,
               text: text,
               parseMode: parseMode,
               entities: entities,
@@ -126,6 +129,7 @@ class TelegramBotApi {
           {
           // int | String
           required Object chatId,
+          int? messageThreadId,
           // int | String
           required Object fromChatId,
           required int messageId,
@@ -133,6 +137,7 @@ class TelegramBotApi {
           bool? protectContent}) async =>
       (await client.api.forwardMessage(
               chatId: chatId,
+              messageThreadId: messageThreadId,
               fromChatId: fromChatId,
               messageId: messageId,
               disableNotification: disableNotification,
@@ -143,6 +148,7 @@ class TelegramBotApi {
           {
           // int | String
           required Object chatId,
+          int? messageThreadId,
           // int | String
           required Object fromChatId,
           required int messageId,
@@ -157,6 +163,7 @@ class TelegramBotApi {
           ReplyMarkup? replyMarkup}) async =>
       (await client.api.copyMessage(
               chatId: chatId,
+              messageThreadId: messageThreadId,
               fromChatId: fromChatId,
               messageId: messageId,
               caption: caption,
@@ -173,6 +180,7 @@ class TelegramBotApi {
           {
           // int | String
           required Object chatId,
+          int? messageThreadId,
           // InputFile | String
           required Object photo,
           String? caption,
@@ -186,6 +194,7 @@ class TelegramBotApi {
           ReplyMarkup? replyMarkup}) async =>
       (await client.api.sendPhoto(
               chatId: chatId,
+              messageThreadId: messageThreadId,
               photo: photo,
               caption: caption,
               parseMode: parseMode,
@@ -201,6 +210,7 @@ class TelegramBotApi {
           {
           // int | String
           required Object chatId,
+          int? messageThreadId,
           // InputFile | String
           required Object audio,
           String? caption,
@@ -219,6 +229,7 @@ class TelegramBotApi {
           ReplyMarkup? replyMarkup}) async =>
       (await client.api.sendAudio(
               chatId: chatId,
+              messageThreadId: messageThreadId,
               audio: audio,
               caption: caption,
               parseMode: parseMode,
@@ -238,6 +249,7 @@ class TelegramBotApi {
           {
           // int | String
           required Object chatId,
+          int? messageThreadId,
           // InputFile | String
           required Object document,
           // InputFile | String
@@ -254,6 +266,7 @@ class TelegramBotApi {
           ReplyMarkup? replyMarkup}) async =>
       (await client.api.sendDocument(
               chatId: chatId,
+              messageThreadId: messageThreadId,
               document: document,
               thumb: thumb,
               caption: caption,
@@ -271,6 +284,7 @@ class TelegramBotApi {
           {
           // int | String
           required Object chatId,
+          int? messageThreadId,
           // InputFile | String
           required Object video,
           int? duration,
@@ -290,6 +304,7 @@ class TelegramBotApi {
           ReplyMarkup? replyMarkup}) async =>
       (await client.api.sendVideo(
               chatId: chatId,
+              messageThreadId: messageThreadId,
               video: video,
               duration: duration,
               width: width,
@@ -310,6 +325,7 @@ class TelegramBotApi {
           {
           // int | String
           required Object chatId,
+          int? messageThreadId,
           // InputFile | String
           required Object animation,
           int? duration,
@@ -328,6 +344,7 @@ class TelegramBotApi {
           ReplyMarkup? replyMarkup}) async =>
       (await client.api.sendAnimation(
               chatId: chatId,
+              messageThreadId: messageThreadId,
               animation: animation,
               duration: duration,
               width: width,
@@ -347,6 +364,7 @@ class TelegramBotApi {
           {
           // int | String
           required Object chatId,
+          int? messageThreadId,
           // InputFile | String
           required Object voice,
           String? caption,
@@ -361,6 +379,7 @@ class TelegramBotApi {
           ReplyMarkup? replyMarkup}) async =>
       (await client.api.sendVoice(
               chatId: chatId,
+              messageThreadId: messageThreadId,
               voice: voice,
               caption: caption,
               parseMode: parseMode,
@@ -377,6 +396,7 @@ class TelegramBotApi {
           {
           // int | String
           required Object chatId,
+          int? messageThreadId,
           // InputFile | String
           required Object videoNote,
           int? duration,
@@ -390,6 +410,7 @@ class TelegramBotApi {
           ReplyMarkup? replyMarkup}) async =>
       (await client.api.sendVideoNote(
               chatId: chatId,
+              messageThreadId: messageThreadId,
               videoNote: videoNote,
               duration: duration,
               length: length,
@@ -405,6 +426,7 @@ class TelegramBotApi {
           {
           // int | String
           required Object chatId,
+          int? messageThreadId,
           required List<InputMedia> media,
           bool? disableNotification,
           bool? protectContent,
@@ -412,6 +434,7 @@ class TelegramBotApi {
           bool? allowSendingWithoutReply}) async =>
       (await client.api.sendMediaGroup(
               chatId: chatId,
+              messageThreadId: messageThreadId,
               media: media,
               disableNotification: disableNotification,
               protectContent: protectContent,
@@ -423,6 +446,7 @@ class TelegramBotApi {
           {
           // int | String
           required Object chatId,
+          int? messageThreadId,
           required double latitude,
           required double longitude,
           double? horizontalAccuracy,
@@ -436,6 +460,7 @@ class TelegramBotApi {
           ReplyMarkup? replyMarkup}) async =>
       (await client.api.sendLocation(
               chatId: chatId,
+              messageThreadId: messageThreadId,
               latitude: latitude,
               longitude: longitude,
               horizontalAccuracy: horizontalAccuracy,
@@ -491,6 +516,7 @@ class TelegramBotApi {
           {
           // int | String
           required Object chatId,
+          int? messageThreadId,
           required double latitude,
           required double longitude,
           required String title,
@@ -506,6 +532,7 @@ class TelegramBotApi {
           ReplyMarkup? replyMarkup}) async =>
       (await client.api.sendVenue(
               chatId: chatId,
+              messageThreadId: messageThreadId,
               latitude: latitude,
               longitude: longitude,
               title: title,
@@ -525,6 +552,7 @@ class TelegramBotApi {
           {
           // int | String
           required Object chatId,
+          int? messageThreadId,
           required String phoneNumber,
           required String firstName,
           String? lastName,
@@ -536,6 +564,7 @@ class TelegramBotApi {
           ReplyMarkup? replyMarkup}) async =>
       (await client.api.sendContact(
               chatId: chatId,
+              messageThreadId: messageThreadId,
               phoneNumber: phoneNumber,
               firstName: firstName,
               lastName: lastName,
@@ -551,6 +580,7 @@ class TelegramBotApi {
           {
           // int | String
           required Object chatId,
+          int? messageThreadId,
           required String question,
           required List<String> options,
           bool? isAnonymous,
@@ -572,6 +602,7 @@ class TelegramBotApi {
           ReplyMarkup? replyMarkup}) async =>
       (await client.api.sendPoll(
               chatId: chatId,
+              messageThreadId: messageThreadId,
               question: question,
               options: options,
               isAnonymous: isAnonymous,
@@ -595,6 +626,7 @@ class TelegramBotApi {
           {
           // int | String
           required Object chatId,
+          int? messageThreadId,
           // DiceEmoji
           String? emoji,
           bool? disableNotification,
@@ -604,6 +636,7 @@ class TelegramBotApi {
           ReplyMarkup? replyMarkup}) async =>
       (await client.api.sendDice(
               chatId: chatId,
+              messageThreadId: messageThreadId,
               emoji: emoji,
               disableNotification: disableNotification,
               protectContent: protectContent,
@@ -683,7 +716,8 @@ class TelegramBotApi {
           bool? canPromoteMembers,
           bool? canChangeInfo,
           bool? canInviteUsers,
-          bool? canPinMessages}) async =>
+          bool? canPinMessages,
+          bool? canManageTopics}) async =>
       (await client.api.promoteChatMember(
               chatId: chatId,
               userId: userId,
@@ -697,7 +731,8 @@ class TelegramBotApi {
               canPromoteMembers: canPromoteMembers,
               canChangeInfo: canChangeInfo,
               canInviteUsers: canInviteUsers,
-              canPinMessages: canPinMessages))
+              canPinMessages: canPinMessages,
+              canManageTopics: canManageTopics))
           .resultOrThrowIfError();
 
   Future<bool> setChatAdministratorCustomTitle(
@@ -911,6 +946,68 @@ class TelegramBotApi {
       (await client.api.deleteChatStickerSet(chatId: chatId))
           .resultOrThrowIfError();
 
+  Future<List<Sticker>> getForumTopicIconStickers() async =>
+      (await client.api.getForumTopicIconStickers()).resultOrThrowIfError();
+
+  Future<ForumTopic> createForumTopic(
+          {
+          // int | String
+          required Object chatId,
+          required String name,
+          int? iconColor,
+          String? iconCustomEmojiId}) async =>
+      (await client.api.createForumTopic(
+              chatId: chatId,
+              name: name,
+              iconColor: iconColor,
+              iconCustomEmojiId: iconCustomEmojiId))
+          .resultOrThrowIfError();
+
+  Future<bool> editForumTopic(
+          { // int | String
+          required Object chatId,
+          required int messageThreadId,
+          required String name,
+          required String iconCustomEmojiId}) async =>
+      (await client.api.editForumTopic(
+              chatId: chatId,
+              messageThreadId: messageThreadId,
+              name: name,
+              iconCustomEmojiId: iconCustomEmojiId))
+          .resultOrThrowIfError();
+
+  Future<bool> closeForumTopic(
+          { // int | String
+          required Object chatId,
+          required int messageThreadId}) async =>
+      (await client.api.closeForumTopic(
+              chatId: chatId, messageThreadId: messageThreadId))
+          .resultOrThrowIfError();
+
+  Future<bool> reopenForumTopic(
+          { // int | String
+          required Object chatId,
+          required int messageThreadId}) async =>
+      (await client.api.reopenForumTopic(
+              chatId: chatId, messageThreadId: messageThreadId))
+          .resultOrThrowIfError();
+
+  Future<bool> deleteForumTopic(
+          { // int | String
+          required Object chatId,
+          required int messageThreadId}) async =>
+      (await client.api.deleteForumTopic(
+              chatId: chatId, messageThreadId: messageThreadId))
+          .resultOrThrowIfError();
+
+  Future<bool> unpinAllForumTopicMessages(
+          { // int | String
+          required Object chatId,
+          required int messageThreadId}) async =>
+      (await client.api.unpinAllForumTopicMessages(
+              chatId: chatId, messageThreadId: messageThreadId))
+          .resultOrThrowIfError();
+
   Future<bool> answerCallbackQuery(
           {required String callbackQueryId,
           String? text,
@@ -1061,6 +1158,7 @@ class TelegramBotApi {
           {
           // int | String
           required Object chatId,
+          int? messageThreadId,
           // InputFile | String
           required Object sticker,
           bool? disableNotification,
@@ -1070,6 +1168,7 @@ class TelegramBotApi {
           ReplyMarkup? replyMarkup}) async =>
       (await client.api.sendSticker(
               chatId: chatId,
+              messageThreadId: messageThreadId,
               sticker: sticker,
               disableNotification: disableNotification,
               protectContent: protectContent,
@@ -1183,6 +1282,7 @@ class TelegramBotApi {
           {
           // int | String
           required Object chatId,
+          int? messageThreadId,
           required String title,
           required String description,
           required String payload,
@@ -1210,6 +1310,7 @@ class TelegramBotApi {
           InlineKeyboardMarkup? replyMarkup}) async =>
       (await client.api.sendInvoice(
               chatId: chatId,
+              messageThreadId: messageThreadId,
               title: title,
               description: description,
               payload: payload,
@@ -1311,6 +1412,7 @@ class TelegramBotApi {
 
   Future<Message> sendGame(
           {required int chatId,
+          int? messageThreadId,
           required String gameShortName,
           bool? disableNotification,
           bool? protectContent,
@@ -1319,6 +1421,7 @@ class TelegramBotApi {
           InlineKeyboardMarkup? replyMarkup}) async =>
       (await client.api.sendGame(
               chatId: chatId,
+              messageThreadId: messageThreadId,
               gameShortName: gameShortName,
               disableNotification: disableNotification,
               protectContent: protectContent,

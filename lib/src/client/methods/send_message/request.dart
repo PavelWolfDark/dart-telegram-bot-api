@@ -13,6 +13,7 @@ class RequestSendMessage extends Request {
       {
       // int | String
       required Object chatId,
+      int? messageThreadId,
       required String text,
       // ParseMode
       String? parseMode,
@@ -25,6 +26,7 @@ class RequestSendMessage extends Request {
       ReplyMarkup? replyMarkup}) {
     final requestParameters = RequestParametersSendMessage(
         chatId: chatId,
+        messageThreadId: messageThreadId,
         text: text,
         parseMode: parseMode,
         entities: entities,

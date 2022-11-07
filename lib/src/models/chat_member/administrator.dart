@@ -15,6 +15,7 @@ class ChatMemberAdministrator extends ChatMember {
   final bool? canPostMessages;
   final bool? canEditMessages;
   final bool? canPinMessages;
+  final bool? canManageTopics;
   final String? customTitle;
 
   ChatMemberAdministrator(
@@ -31,6 +32,7 @@ class ChatMemberAdministrator extends ChatMember {
       this.canPostMessages,
       this.canEditMessages,
       this.canPinMessages,
+      this.canManageTopics,
       this.customTitle})
       : super(status: ChatMemberStatus.administrator, user: user);
 
@@ -50,6 +52,7 @@ class ChatMemberAdministrator extends ChatMember {
         canPostMessages: json['can_post_messages'],
         canEditMessages: json['can_edit_messages'],
         canPinMessages: json['can_pin_messages'],
+        canManageTopics: json['can_manage_topics'],
         customTitle: json['custom_title']);
   }
 }

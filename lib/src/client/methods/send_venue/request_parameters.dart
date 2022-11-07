@@ -7,6 +7,7 @@ class RequestParametersSendVenue implements RequestParameters {
   final hasInputFiles = false;
   // int | String
   final Object chatId;
+  final int? messageThreadId;
   final double latitude;
   final double longitude;
   final String title;
@@ -23,6 +24,7 @@ class RequestParametersSendVenue implements RequestParameters {
 
   RequestParametersSendVenue(
       {required this.chatId,
+      this.messageThreadId,
       required this.latitude,
       required this.longitude,
       required this.title,
@@ -41,6 +43,9 @@ class RequestParametersSendVenue implements RequestParameters {
   Map<String, dynamic> toJson() {
     Map<String, dynamic> json = {};
     json['chat_id'] = chatId;
+    if (messageThreadId != null) {
+      json['message_thread_id'] = messageThreadId;
+    }
     json['latitude'] = latitude;
     json['longitude'] = longitude;
     json['title'] = title;
@@ -79,6 +84,9 @@ class RequestParametersSendVenue implements RequestParameters {
   Map<String, String> toFormData() {
     Map<String, String> formData = {};
     formData['chat_id'] = chatId.toString();
+    if (messageThreadId != null) {
+      formData['message_thread_id'] = messageThreadId.toString();
+    }
     formData['latitude'] = latitude.toString();
     formData['longitude'] = longitude.toString();
     formData['title'] = title;

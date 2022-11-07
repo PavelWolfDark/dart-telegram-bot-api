@@ -12,6 +12,7 @@ class RequestSendSticker extends Request {
       {
       // int | String
       required Object chatId,
+      int? messageThreadId,
       // InputFile | String
       required Object sticker,
       bool? disableNotification,
@@ -21,6 +22,7 @@ class RequestSendSticker extends Request {
       ReplyMarkup? replyMarkup}) {
     final requestParameters = RequestParametersSendSticker(
         chatId: chatId,
+        messageThreadId: messageThreadId,
         sticker: sticker,
         disableNotification: disableNotification,
         protectContent: protectContent,

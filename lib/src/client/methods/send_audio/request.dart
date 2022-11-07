@@ -13,6 +13,7 @@ class RequestSendAudio extends Request {
       {
       // int | String
       required Object chatId,
+      int? messageThreadId,
       // InputFile | String
       required Object audio,
       String? caption,
@@ -31,6 +32,7 @@ class RequestSendAudio extends Request {
       ReplyMarkup? replyMarkup}) {
     final requestParameters = RequestParametersSendAudio(
         chatId: chatId,
+        messageThreadId: messageThreadId,
         audio: audio,
         caption: caption,
         parseMode: parseMode,

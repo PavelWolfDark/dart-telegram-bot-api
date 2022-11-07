@@ -13,6 +13,7 @@ class RequestSendPhoto extends Request {
       {
       // int | String
       required Object chatId,
+      int? messageThreadId,
       // InputFile | String
       required Object photo,
       String? caption,
@@ -26,6 +27,7 @@ class RequestSendPhoto extends Request {
       ReplyMarkup? replyMarkup}) {
     final requestParameters = RequestParametersSendPhoto(
         chatId: chatId,
+        messageThreadId: messageThreadId,
         photo: photo,
         caption: caption,
         parseMode: parseMode,

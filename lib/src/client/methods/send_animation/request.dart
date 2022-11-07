@@ -13,6 +13,7 @@ class RequestSendAnimation extends Request {
       {
       // int | String
       required Object chatId,
+      int? messageThreadId,
       // InputFile | String
       required Object animation,
       int? duration,
@@ -31,6 +32,7 @@ class RequestSendAnimation extends Request {
       ReplyMarkup? replyMarkup}) {
     final requestParameters = RequestParametersSendAnimation(
         chatId: chatId,
+        messageThreadId: messageThreadId,
         animation: animation,
         duration: duration,
         width: width,

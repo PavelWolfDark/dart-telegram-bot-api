@@ -7,6 +7,7 @@ class ChatPermissions {
   final bool? canChangeInfo;
   final bool? canInviteUsers;
   final bool? canPinMessages;
+  final bool? canManageTopics;
 
   ChatPermissions(
       {this.canSendMessages,
@@ -16,7 +17,8 @@ class ChatPermissions {
       this.canAddWebPagePreviews,
       this.canChangeInfo,
       this.canInviteUsers,
-      this.canPinMessages});
+      this.canPinMessages,
+      this.canManageTopics});
 
   factory ChatPermissions.fromJson(Map<String, dynamic> json) =>
       ChatPermissions(
@@ -27,7 +29,8 @@ class ChatPermissions {
           canAddWebPagePreviews: json['can_add_web_page_previews'],
           canChangeInfo: json['can_change_info'],
           canInviteUsers: json['can_invite_users'],
-          canPinMessages: json['can_pin_messages']);
+          canPinMessages: json['can_pin_messages'],
+          canManageTopics: json['can_manage_topics']);
 
   Map<String, dynamic> toJson() {
     Map<String, dynamic> json = {};
@@ -54,6 +57,9 @@ class ChatPermissions {
     }
     if (canPinMessages != null) {
       json['can_pin_messages'] = canPinMessages;
+    }
+    if (canManageTopics != null) {
+      json['can_manage_topics'] = canManageTopics;
     }
     return json;
   }

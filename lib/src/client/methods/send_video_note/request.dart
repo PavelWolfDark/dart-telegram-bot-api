@@ -12,6 +12,7 @@ class RequestSendVideoNote extends Request {
       {
       // int | String
       required Object chatId,
+      int? messageThreadId,
       // InputFile | String
       required Object videoNote,
       int? duration,
@@ -25,6 +26,7 @@ class RequestSendVideoNote extends Request {
       ReplyMarkup? replyMarkup}) {
     final requestParameters = RequestParametersSendVideoNote(
         chatId: chatId,
+        messageThreadId: messageThreadId,
         videoNote: videoNote,
         duration: duration,
         length: length,

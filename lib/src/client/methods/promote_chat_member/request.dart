@@ -22,7 +22,8 @@ class RequestPromoteChatMember extends Request {
       bool? canPromoteMembers,
       bool? canChangeInfo,
       bool? canInviteUsers,
-      bool? canPinMessages}) {
+      bool? canPinMessages,
+      bool? canManageTopics}) {
     final requestParameters = RequestParametersPromoteChatMember(
         chatId: chatId,
         userId: userId,
@@ -36,7 +37,8 @@ class RequestPromoteChatMember extends Request {
         canPromoteMembers: canPromoteMembers,
         canChangeInfo: canChangeInfo,
         canInviteUsers: canInviteUsers,
-        canPinMessages: canPinMessages);
+        canPinMessages: canPinMessages,
+        canManageTopics: canManageTopics);
     return RequestPromoteChatMember(requestParameters);
   }
 

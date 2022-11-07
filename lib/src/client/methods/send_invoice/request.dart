@@ -13,6 +13,7 @@ class RequestSendInvoice extends Request {
       {
       // int | String
       required Object chatId,
+      int? messageThreadId,
       required String title,
       required String description,
       required String payload,
@@ -40,6 +41,7 @@ class RequestSendInvoice extends Request {
       InlineKeyboardMarkup? replyMarkup}) {
     final requestParameters = RequestParametersSendInvoice(
         chatId: chatId,
+        messageThreadId: messageThreadId,
         title: title,
         description: description,
         payload: payload,

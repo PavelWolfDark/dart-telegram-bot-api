@@ -7,6 +7,7 @@ class ChatMemberRestricted extends ChatMember {
   final bool canChangeInfo;
   final bool canInviteUsers;
   final bool canPinMessages;
+  final bool canManageTopics;
   final bool canSendMessages;
   final bool canSendMediaMessages;
   final bool canSendPolls;
@@ -20,6 +21,7 @@ class ChatMemberRestricted extends ChatMember {
       required this.canChangeInfo,
       required this.canInviteUsers,
       required this.canPinMessages,
+      required this.canManageTopics,
       required this.canSendMessages,
       required this.canSendMediaMessages,
       required this.canSendPolls,
@@ -36,6 +38,7 @@ class ChatMemberRestricted extends ChatMember {
         canChangeInfo: json['can_change_info'],
         canInviteUsers: json['can_invite_users'],
         canPinMessages: json['can_pin_messages'],
+        canManageTopics: json['can_manage_topics'],
         canSendMessages: json['can_send_messages'],
         canSendMediaMessages: json['can_send_media_messages'],
         canSendPolls: json['can_send_polls'],

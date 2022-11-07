@@ -12,6 +12,7 @@ class RequestSendVenue extends Request {
       {
       // int | String
       required Object chatId,
+      int? messageThreadId,
       required double latitude,
       required double longitude,
       required String title,
@@ -27,6 +28,7 @@ class RequestSendVenue extends Request {
       ReplyMarkup? replyMarkup}) {
     final requestParameters = RequestParametersSendVenue(
         chatId: chatId,
+        messageThreadId: messageThreadId,
         latitude: latitude,
         longitude: longitude,
         title: title,

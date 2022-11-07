@@ -31,7 +31,8 @@ class RequestMethod {
   static const unbanChatMember = 'unbanChatMember';
   static const restrictChatMember = 'restrictChatMember';
   static const promoteChatMember = 'promoteChatMember';
-  static const setChatAdministratorCustomTitle = 'setChatAdministratorCustomTitle';
+  static const setChatAdministratorCustomTitle =
+      'setChatAdministratorCustomTitle';
   static const banChatSenderChat = 'banChatSenderChat';
   static const unbanChatSenderChat = 'unbanChatSenderChat';
   static const setChatPermissions = 'setChatPermissions';
@@ -55,14 +56,23 @@ class RequestMethod {
   static const getChatMember = 'getChatMember';
   static const setChatStickerSet = 'setChatStickerSet';
   static const deleteChatStickerSet = 'deleteChatStickerSet';
+  static const getForumTopicIconStickers = 'getForumTopicIconStickers';
+  static const createForumTopic = 'createForumTopic';
+  static const editForumTopic = 'editForumTopic';
+  static const closeForumTopic = 'closeForumTopic';
+  static const reopenForumTopic = 'reopenForumTopic';
+  static const deleteForumTopic = 'deleteForumTopic';
+  static const unpinAllForumTopicMessages = 'unpinAllForumTopicMessages';
   static const answerCallbackQuery = 'answerCallbackQuery';
   static const setMyCommands = 'setMyCommands';
   static const deleteMyCommands = 'deleteMyCommands';
   static const getMyCommands = 'getMyCommands';
   static const setChatMenuButton = 'setChatMenuButton';
   static const getChatMenuButton = 'getChatMenuButton';
-  static const setMyDefaultAdministratorRights = 'setMyDefaultAdministratorRights';
-  static const getMyDefaultAdministratorRights = 'getMyDefaultAdministratorRights';
+  static const setMyDefaultAdministratorRights =
+      'setMyDefaultAdministratorRights';
+  static const getMyDefaultAdministratorRights =
+      'getMyDefaultAdministratorRights';
   static const editMessageText = 'editMessageText';
   static const editMessageCaption = 'editMessageCaption';
   static const editMessageMedia = 'editMessageMedia';

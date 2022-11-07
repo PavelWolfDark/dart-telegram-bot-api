@@ -12,6 +12,7 @@ class RequestSendContact extends Request {
       {
       // int | String
       required Object chatId,
+      int? messageThreadId,
       required String phoneNumber,
       required String firstName,
       String? lastName,
@@ -23,6 +24,7 @@ class RequestSendContact extends Request {
       ReplyMarkup? replyMarkup}) {
     final requestParameters = RequestParametersSendContact(
         chatId: chatId,
+        messageThreadId: messageThreadId,
         phoneNumber: phoneNumber,
         firstName: firstName,
         lastName: lastName,

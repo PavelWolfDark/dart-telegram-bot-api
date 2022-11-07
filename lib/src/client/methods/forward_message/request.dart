@@ -11,6 +11,7 @@ class RequestForwardMessage extends Request {
       {
       // int | String
       required Object chatId,
+      int? messageThreadId,
       // int | String
       required Object fromChatId,
       required int messageId,
@@ -18,6 +19,7 @@ class RequestForwardMessage extends Request {
       bool? protectContent}) {
     final requestParameters = RequestParametersForwardMessage(
         chatId: chatId,
+        messageThreadId: messageThreadId,
         fromChatId: fromChatId,
         messageId: messageId,
         disableNotification: disableNotification,

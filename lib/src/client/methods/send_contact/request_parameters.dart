@@ -7,6 +7,7 @@ class RequestParametersSendContact implements RequestParameters {
   final hasInputFiles = false;
   // int | String
   final Object chatId;
+  final int? messageThreadId;
   final String phoneNumber;
   final String firstName;
   final String? lastName;
@@ -19,6 +20,7 @@ class RequestParametersSendContact implements RequestParameters {
 
   RequestParametersSendContact(
       {required this.chatId,
+      this.messageThreadId,
       required this.phoneNumber,
       required this.firstName,
       this.lastName,
@@ -33,6 +35,9 @@ class RequestParametersSendContact implements RequestParameters {
   Map<String, dynamic> toJson() {
     Map<String, dynamic> json = {};
     json['chat_id'] = chatId;
+    if (messageThreadId != null) {
+      json['message_thread_id'] = messageThreadId;
+    }
     json['phone_number'] = phoneNumber;
     json['first_name'] = firstName;
     if (lastName != null) {
@@ -63,6 +68,9 @@ class RequestParametersSendContact implements RequestParameters {
   Map<String, String> toFormData() {
     Map<String, String> formData = {};
     formData['chat_id'] = chatId.toString();
+    if (messageThreadId != null) {
+      formData['message_thread_id'] = messageThreadId.toString();
+    }
     formData['phone_number'] = phoneNumber;
     formData['first_name'] = firstName;
     if (lastName != null) {

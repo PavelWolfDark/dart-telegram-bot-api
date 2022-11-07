@@ -7,6 +7,7 @@ import '../../request_parameters.dart';
 class RequestParametersSendAudio implements RequestParameters {
   // int | String
   final Object chatId;
+  final int? messageThreadId;
   // InputFile | String
   final Object audio;
   final String? caption;
@@ -29,6 +30,7 @@ class RequestParametersSendAudio implements RequestParameters {
 
   RequestParametersSendAudio(
       {required this.chatId,
+      this.messageThreadId,
       required this.audio,
       this.caption,
       this.parseMode,
@@ -47,6 +49,9 @@ class RequestParametersSendAudio implements RequestParameters {
   Map<String, dynamic> toJson() {
     Map<String, dynamic> json = {};
     json['chat_id'] = chatId;
+    if (messageThreadId != null) {
+      json['message_thread_id'] = messageThreadId;
+    }
     json['audio'] = audio;
     if (caption != null) {
       json['caption'] = caption;
@@ -95,6 +100,9 @@ class RequestParametersSendAudio implements RequestParameters {
   Map<String, dynamic> toFormData() {
     Map<String, dynamic> formData = {};
     formData['chat_id'] = chatId.toString();
+    if (messageThreadId != null) {
+      formData['message_thread_id'] = messageThreadId.toString();
+    }
     formData['audio'] = audio;
     if (caption != null) {
       formData['caption'] = caption;

@@ -13,6 +13,7 @@ class RequestSendDocument extends Request {
       {
       // int | String
       required Object chatId,
+      int? messageThreadId,
       // InputFile | String
       required Object document,
       // InputFile | String
@@ -29,6 +30,7 @@ class RequestSendDocument extends Request {
       ReplyMarkup? replyMarkup}) {
     final requestParameters = RequestParametersSendDocument(
         chatId: chatId,
+        messageThreadId: messageThreadId,
         document: document,
         thumb: thumb,
         caption: caption,

@@ -10,6 +10,7 @@ class RequestSendGame extends Request {
 
   factory RequestSendGame.create(
       {required int chatId,
+      int? messageThreadId,
       required String gameShortName,
       bool? disableNotification,
       bool? protectContent,
@@ -18,6 +19,7 @@ class RequestSendGame extends Request {
       InlineKeyboardMarkup? replyMarkup}) {
     final requestParameters = RequestParametersSendGame(
         chatId: chatId,
+        messageThreadId: messageThreadId,
         gameShortName: gameShortName,
         disableNotification: disableNotification,
         protectContent: protectContent,

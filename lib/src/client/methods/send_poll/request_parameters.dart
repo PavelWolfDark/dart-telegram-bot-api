@@ -8,6 +8,7 @@ class RequestParametersSendPoll implements RequestParameters {
   final hasInputFiles = false;
   // int | String
   final Object chatId;
+  final int? messageThreadId;
   final String question;
   final List<String> options;
   final bool? isAnonymous;
@@ -30,6 +31,7 @@ class RequestParametersSendPoll implements RequestParameters {
 
   RequestParametersSendPoll(
       {required this.chatId,
+      this.messageThreadId,
       required this.question,
       required this.options,
       this.isAnonymous,
@@ -52,6 +54,9 @@ class RequestParametersSendPoll implements RequestParameters {
   Map<String, dynamic> toJson() {
     Map<String, dynamic> json = {};
     json['chat_id'] = chatId;
+    if (messageThreadId != null) {
+      json['message_thread_id'] = messageThreadId;
+    }
     json['question'] = question;
     json['options'] = [...options];
     if (isAnonymous != null) {
@@ -110,6 +115,9 @@ class RequestParametersSendPoll implements RequestParameters {
   Map<String, String> toFormData() {
     Map<String, String> formData = {};
     formData['chat_id'] = chatId.toString();
+    if (messageThreadId != null) {
+      formData['message_thread_id'] = messageThreadId.toString();
+    }
     formData['question'] = question;
     formData['options'] = jsonEncode([...options]);
     if (isAnonymous != null) {

@@ -12,6 +12,7 @@ class RequestSendLocation extends Request {
       {
       // int | String
       required Object chatId,
+      int? messageThreadId,
       required double latitude,
       required double longitude,
       double? horizontalAccuracy,
@@ -25,6 +26,7 @@ class RequestSendLocation extends Request {
       ReplyMarkup? replyMarkup}) {
     final requestParameters = RequestParametersSendLocation(
         chatId: chatId,
+        messageThreadId: messageThreadId,
         latitude: latitude,
         longitude: longitude,
         horizontalAccuracy: horizontalAccuracy,

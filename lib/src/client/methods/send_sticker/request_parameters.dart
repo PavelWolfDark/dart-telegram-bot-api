@@ -6,6 +6,7 @@ import '../../request_parameters.dart';
 class RequestParametersSendSticker implements RequestParameters {
   // int | String
   final Object chatId;
+  final int? messageThreadId;
   // InputFile | String
   final Object sticker;
   final bool? disableNotification;
@@ -19,6 +20,7 @@ class RequestParametersSendSticker implements RequestParameters {
 
   RequestParametersSendSticker(
       {required this.chatId,
+      this.messageThreadId,
       required this.sticker,
       this.disableNotification,
       this.protectContent,
@@ -30,6 +32,9 @@ class RequestParametersSendSticker implements RequestParameters {
   Map<String, dynamic> toJson() {
     Map<String, dynamic> json = {};
     json['chat_id'] = chatId;
+    if (messageThreadId != null) {
+      json['message_thread_id'] = messageThreadId;
+    }
     json['sticker'] = sticker;
     if (disableNotification != null) {
       json['disable_notification'] = disableNotification;
@@ -53,6 +58,9 @@ class RequestParametersSendSticker implements RequestParameters {
   Map<String, dynamic> toFormData() {
     Map<String, dynamic> formData = {};
     formData['chat_id'] = chatId.toString();
+    if (messageThreadId != null) {
+      formData['message_thread_id'] = messageThreadId.toString();
+    }
     formData['sticker'] = sticker;
     if (disableNotification != null) {
       formData['disable_notification'] = disableNotification.toString();

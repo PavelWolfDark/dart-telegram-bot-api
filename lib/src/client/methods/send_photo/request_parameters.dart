@@ -7,6 +7,7 @@ import '../../request_parameters.dart';
 class RequestParametersSendPhoto implements RequestParameters {
   // int | String
   final Object chatId;
+  final int? messageThreadId;
   // InputFile | String
   final Object photo;
   final String? caption;
@@ -24,6 +25,7 @@ class RequestParametersSendPhoto implements RequestParameters {
 
   RequestParametersSendPhoto(
       {required this.chatId,
+      this.messageThreadId,
       required this.photo,
       this.caption,
       this.parseMode,
@@ -38,6 +40,9 @@ class RequestParametersSendPhoto implements RequestParameters {
   Map<String, dynamic> toJson() {
     Map<String, dynamic> json = {};
     json['chat_id'] = chatId;
+    if (messageThreadId != null) {
+      json['message_thread_id'] = messageThreadId;
+    }
     json['photo'] = photo;
     if (caption != null) {
       json['caption'] = caption;
@@ -74,6 +79,9 @@ class RequestParametersSendPhoto implements RequestParameters {
   Map<String, dynamic> toFormData() {
     Map<String, dynamic> formData = {};
     formData['chat_id'] = chatId.toString();
+    if (messageThreadId != null) {
+      formData['message_thread_id'] = messageThreadId.toString();
+    }
     formData['photo'] = photo;
     if (caption != null) {
       formData['caption'] = caption;

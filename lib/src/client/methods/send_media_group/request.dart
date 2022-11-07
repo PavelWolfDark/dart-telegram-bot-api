@@ -12,6 +12,7 @@ class RequestSendMediaGroup extends Request {
       {
       // int | String
       required Object chatId,
+      int? messageThreadId,
       required List<InputMedia> media,
       bool? disableNotification,
       bool? protectContent,
@@ -19,6 +20,7 @@ class RequestSendMediaGroup extends Request {
       bool? allowSendingWithoutReply}) {
     final requestParameters = RequestParametersSendMediaGroup(
         chatId: chatId,
+        messageThreadId: messageThreadId,
         media: media,
         disableNotification: disableNotification,
         protectContent: protectContent,

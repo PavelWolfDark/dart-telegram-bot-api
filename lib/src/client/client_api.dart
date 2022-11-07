@@ -33,10 +33,14 @@ import 'methods/ban_chat_sender_chat/request.dart';
 import 'methods/ban_chat_sender_chat/response.dart';
 import 'methods/close/request.dart';
 import 'methods/close/response.dart';
+import 'methods/close_forum_topic/request.dart';
+import 'methods/close_forum_topic/response.dart';
 import 'methods/copy_message/request.dart';
 import 'methods/copy_message/response.dart';
 import 'methods/create_chat_invite_link/request.dart';
 import 'methods/create_chat_invite_link/response.dart';
+import 'methods/create_forum_topic/request.dart';
+import 'methods/create_forum_topic/response.dart';
 import 'methods/create_invoice_link/request.dart';
 import 'methods/create_invoice_link/response.dart';
 import 'methods/create_new_sticker_set/request.dart';
@@ -47,6 +51,8 @@ import 'methods/delete_chat_photo/request.dart';
 import 'methods/delete_chat_photo/response.dart';
 import 'methods/delete_chat_sticker_set/request.dart';
 import 'methods/delete_chat_sticker_set/response.dart';
+import 'methods/delete_forum_topic/request.dart';
+import 'methods/delete_forum_topic/response.dart';
 import 'methods/delete_message/request.dart';
 import 'methods/delete_message/response.dart';
 import 'methods/delete_my_commands/request.dart';
@@ -57,6 +63,8 @@ import 'methods/delete_webhook/request.dart';
 import 'methods/delete_webhook/response.dart';
 import 'methods/edit_chat_invite_link/request.dart';
 import 'methods/edit_chat_invite_link/response.dart';
+import 'methods/edit_forum_topic/request.dart';
+import 'methods/edit_forum_topic/response.dart';
 import 'methods/edit_message_caption/request.dart';
 import 'methods/edit_message_caption/response.dart';
 import 'methods/edit_message_live_location/request.dart';
@@ -85,6 +93,8 @@ import 'methods/get_custom_emoji_stickers/request.dart';
 import 'methods/get_custom_emoji_stickers/response.dart';
 import 'methods/get_file/request.dart';
 import 'methods/get_file/response.dart';
+import 'methods/get_forum_topic_icon_stickers/request.dart';
+import 'methods/get_forum_topic_icon_stickers/response.dart';
 import 'methods/get_game_high_scores/request.dart';
 import 'methods/get_game_high_scores/response.dart';
 import 'methods/get_me/request.dart';
@@ -109,6 +119,8 @@ import 'methods/pin_chat_message/request.dart';
 import 'methods/pin_chat_message/response.dart';
 import 'methods/promote_chat_member/request.dart';
 import 'methods/promote_chat_member/response.dart';
+import 'methods/reopen_forum_topic/request.dart';
+import 'methods/reopen_forum_topic/response.dart';
 import 'methods/restrict_chat_member/request.dart';
 import 'methods/restrict_chat_member/response.dart';
 import 'methods/revoke_chat_invite_link/request.dart';
@@ -187,6 +199,8 @@ import 'methods/unban_chat_sender_chat/request.dart';
 import 'methods/unban_chat_sender_chat/response.dart';
 import 'methods/unpin_all_chat_messages/request.dart';
 import 'methods/unpin_all_chat_messages/response.dart';
+import 'methods/unpin_all_forum_topic_messages/request.dart';
+import 'methods/unpin_all_forum_topic_messages/response.dart';
 import 'methods/unpin_chat_message/request.dart';
 import 'methods/unpin_chat_message/response.dart';
 import 'methods/upload_sticker_file/request.dart';
@@ -262,6 +276,7 @@ class ClientApi {
       {
       // int | String
       required Object chatId,
+      int? messageThreadId,
       required String text,
       // ParseMode
       String? parseMode,
@@ -274,6 +289,7 @@ class ClientApi {
       ReplyMarkup? replyMarkup}) {
     final request = RequestSendMessage.create(
         chatId: chatId,
+        messageThreadId: messageThreadId,
         text: text,
         parseMode: parseMode,
         entities: entities,
@@ -290,6 +306,7 @@ class ClientApi {
       {
       // int | String
       required Object chatId,
+      int? messageThreadId,
       // int | String
       required Object fromChatId,
       required int messageId,
@@ -297,6 +314,7 @@ class ClientApi {
       bool? protectContent}) {
     final request = RequestForwardMessage.create(
         chatId: chatId,
+        messageThreadId: messageThreadId,
         fromChatId: fromChatId,
         messageId: messageId,
         disableNotification: disableNotification,
@@ -308,6 +326,7 @@ class ClientApi {
       {
       // int | String
       required Object chatId,
+      int? messageThreadId,
       // int | String
       required Object fromChatId,
       required int messageId,
@@ -322,6 +341,7 @@ class ClientApi {
       ReplyMarkup? replyMarkup}) {
     final request = RequestCopyMessage.create(
         chatId: chatId,
+        messageThreadId: messageThreadId,
         fromChatId: fromChatId,
         messageId: messageId,
         caption: caption,
@@ -339,6 +359,7 @@ class ClientApi {
       {
       // int | String
       required Object chatId,
+      int? messageThreadId,
       // InputFile | String
       required Object photo,
       String? caption,
@@ -352,6 +373,7 @@ class ClientApi {
       ReplyMarkup? replyMarkup}) {
     final request = RequestSendPhoto.create(
         chatId: chatId,
+        messageThreadId: messageThreadId,
         photo: photo,
         caption: caption,
         parseMode: parseMode,
@@ -368,6 +390,7 @@ class ClientApi {
       {
       // int | String
       required Object chatId,
+      int? messageThreadId,
       // InputFile | String
       required Object audio,
       String? caption,
@@ -386,6 +409,7 @@ class ClientApi {
       ReplyMarkup? replyMarkup}) {
     final request = RequestSendAudio.create(
         chatId: chatId,
+        messageThreadId: messageThreadId,
         audio: audio,
         caption: caption,
         parseMode: parseMode,
@@ -406,6 +430,7 @@ class ClientApi {
       {
       // int | String
       required Object chatId,
+      int? messageThreadId,
       // InputFile | String
       required Object document,
       // InputFile | String
@@ -422,6 +447,7 @@ class ClientApi {
       ReplyMarkup? replyMarkup}) {
     final request = RequestSendDocument.create(
         chatId: chatId,
+        messageThreadId: messageThreadId,
         document: document,
         thumb: thumb,
         caption: caption,
@@ -440,6 +466,7 @@ class ClientApi {
       {
       // int | String
       required Object chatId,
+      int? messageThreadId,
       // InputFile | String
       required Object video,
       int? duration,
@@ -459,6 +486,7 @@ class ClientApi {
       ReplyMarkup? replyMarkup}) {
     final request = RequestSendVideo.create(
         chatId: chatId,
+        messageThreadId: messageThreadId,
         video: video,
         duration: duration,
         width: width,
@@ -480,6 +508,7 @@ class ClientApi {
       {
       // int | String
       required Object chatId,
+      int? messageThreadId,
       // InputFile | String
       required Object animation,
       int? duration,
@@ -498,6 +527,7 @@ class ClientApi {
       ReplyMarkup? replyMarkup}) {
     final request = RequestSendAnimation.create(
         chatId: chatId,
+        messageThreadId: messageThreadId,
         animation: animation,
         duration: duration,
         width: width,
@@ -518,6 +548,7 @@ class ClientApi {
       {
       // int | String
       required Object chatId,
+      int? messageThreadId,
       // InputFile | String
       required Object voice,
       String? caption,
@@ -532,6 +563,7 @@ class ClientApi {
       ReplyMarkup? replyMarkup}) {
     final request = RequestSendVoice.create(
         chatId: chatId,
+        messageThreadId: messageThreadId,
         voice: voice,
         caption: caption,
         parseMode: parseMode,
@@ -549,6 +581,7 @@ class ClientApi {
       {
       // int | String
       required Object chatId,
+      int? messageThreadId,
       // InputFile | String
       required Object videoNote,
       int? duration,
@@ -562,6 +595,7 @@ class ClientApi {
       ReplyMarkup? replyMarkup}) {
     final request = RequestSendVideoNote.create(
         chatId: chatId,
+        messageThreadId: messageThreadId,
         videoNote: videoNote,
         duration: duration,
         length: length,
@@ -578,6 +612,7 @@ class ClientApi {
       {
       // int | String
       required Object chatId,
+      int? messageThreadId,
       required List<InputMedia> media,
       bool? disableNotification,
       bool? protectContent,
@@ -585,6 +620,7 @@ class ClientApi {
       bool? allowSendingWithoutReply}) {
     final request = RequestSendMediaGroup.create(
         chatId: chatId,
+        messageThreadId: messageThreadId,
         media: media,
         disableNotification: disableNotification,
         protectContent: protectContent,
@@ -597,6 +633,7 @@ class ClientApi {
       {
       // int | String
       required Object chatId,
+      int? messageThreadId,
       required double latitude,
       required double longitude,
       double? horizontalAccuracy,
@@ -610,6 +647,7 @@ class ClientApi {
       ReplyMarkup? replyMarkup}) {
     final request = RequestSendLocation.create(
         chatId: chatId,
+        messageThreadId: messageThreadId,
         latitude: latitude,
         longitude: longitude,
         horizontalAccuracy: horizontalAccuracy,
@@ -668,6 +706,7 @@ class ClientApi {
       {
       // int | String
       required Object chatId,
+      int? messageThreadId,
       required double latitude,
       required double longitude,
       required String title,
@@ -683,6 +722,7 @@ class ClientApi {
       ReplyMarkup? replyMarkup}) {
     final request = RequestSendVenue.create(
         chatId: chatId,
+        messageThreadId: messageThreadId,
         latitude: latitude,
         longitude: longitude,
         title: title,
@@ -703,6 +743,7 @@ class ClientApi {
       {
       // int | String
       required Object chatId,
+      int? messageThreadId,
       required String phoneNumber,
       required String firstName,
       String? lastName,
@@ -714,6 +755,7 @@ class ClientApi {
       ReplyMarkup? replyMarkup}) {
     final request = RequestSendContact.create(
         chatId: chatId,
+        messageThreadId: messageThreadId,
         phoneNumber: phoneNumber,
         firstName: firstName,
         lastName: lastName,
@@ -730,6 +772,7 @@ class ClientApi {
       {
       // int | String
       required Object chatId,
+      int? messageThreadId,
       required String question,
       required List<String> options,
       bool? isAnonymous,
@@ -751,6 +794,7 @@ class ClientApi {
       ReplyMarkup? replyMarkup}) {
     final request = RequestSendPoll.create(
         chatId: chatId,
+        messageThreadId: messageThreadId,
         question: question,
         options: options,
         isAnonymous: isAnonymous,
@@ -775,6 +819,7 @@ class ClientApi {
       {
       // int | String
       required Object chatId,
+      int? messageThreadId,
       // DiceEmoji
       String? emoji,
       bool? disableNotification,
@@ -784,6 +829,7 @@ class ClientApi {
       ReplyMarkup? replyMarkup}) {
     final request = RequestSendDice.create(
         chatId: chatId,
+        messageThreadId: messageThreadId,
         emoji: emoji,
         disableNotification: disableNotification,
         protectContent: protectContent,
@@ -872,7 +918,8 @@ class ClientApi {
       bool? canPromoteMembers,
       bool? canChangeInfo,
       bool? canInviteUsers,
-      bool? canPinMessages}) {
+      bool? canPinMessages,
+      bool? canManageTopics}) {
     final request = RequestPromoteChatMember.create(
         chatId: chatId,
         userId: userId,
@@ -886,7 +933,8 @@ class ClientApi {
         canPromoteMembers: canPromoteMembers,
         canChangeInfo: canChangeInfo,
         canInviteUsers: canInviteUsers,
-        canPinMessages: canPinMessages);
+        canPinMessages: canPinMessages,
+        canManageTopics: canManageTopics);
     return _client.send(request);
   }
 
@@ -1132,6 +1180,76 @@ class ClientApi {
     return _client.send(request);
   }
 
+  Future<ResponseGetForumTopicIconStickers> getForumTopicIconStickers() {
+    final request = RequestGetForumTopicIconStickers();
+    return _client.send(request);
+  }
+
+  Future<ResponseCreateForumTopic> createForumTopic(
+      {
+      // int | String
+      required Object chatId,
+      required String name,
+      int? iconColor,
+      String? iconCustomEmojiId}) {
+    final request = RequestCreateForumTopic.create(
+        chatId: chatId,
+        name: name,
+        iconColor: iconColor,
+        iconCustomEmojiId: iconCustomEmojiId);
+    return _client.send(request);
+  }
+
+  Future<ResponseEditForumTopic> editForumTopic(
+      { // int | String
+      required Object chatId,
+      required int messageThreadId,
+      required String name,
+      required String iconCustomEmojiId}) {
+    final request = RequestEditForumTopic.create(
+        chatId: chatId,
+        messageThreadId: messageThreadId,
+        name: name,
+        iconCustomEmojiId: iconCustomEmojiId);
+    return _client.send(request);
+  }
+
+  Future<ResponseCloseForumTopic> closeForumTopic(
+      { // int | String
+      required Object chatId,
+      required int messageThreadId}) {
+    final request = RequestCloseForumTopic.create(
+        chatId: chatId, messageThreadId: messageThreadId);
+    return _client.send(request);
+  }
+
+  Future<ResponseReopenForumTopic> reopenForumTopic(
+      { // int | String
+      required Object chatId,
+      required int messageThreadId}) {
+    final request = RequestReopenForumTopic.create(
+        chatId: chatId, messageThreadId: messageThreadId);
+    return _client.send(request);
+  }
+
+  Future<ResponseDeleteForumTopic> deleteForumTopic(
+      { // int | String
+      required Object chatId,
+      required int messageThreadId}) {
+    final request = RequestDeleteForumTopic.create(
+        chatId: chatId, messageThreadId: messageThreadId);
+    return _client.send(request);
+  }
+
+  Future<ResponseUnpinAllForumTopicMessages> unpinAllForumTopicMessages(
+      { // int | String
+      required Object chatId,
+      required int messageThreadId}) {
+    final request = RequestUnpinAllForumTopicMessages.create(
+        chatId: chatId, messageThreadId: messageThreadId);
+    return _client.send(request);
+  }
+
   Future<ResponseAnswerCallbackQuery> answerCallbackQuery(
       {required String callbackQueryId,
       String? text,
@@ -1300,6 +1418,7 @@ class ClientApi {
       {
       // int | String
       required Object chatId,
+      int? messageThreadId,
       // InputFile | String
       required Object sticker,
       bool? disableNotification,
@@ -1309,6 +1428,7 @@ class ClientApi {
       ReplyMarkup? replyMarkup}) {
     final request = RequestSendSticker.create(
         chatId: chatId,
+        messageThreadId: messageThreadId,
         sticker: sticker,
         disableNotification: disableNotification,
         protectContent: protectContent,
@@ -1435,6 +1555,7 @@ class ClientApi {
       {
       // int | String
       required Object chatId,
+      int? messageThreadId,
       required String title,
       required String description,
       required String payload,
@@ -1462,6 +1583,7 @@ class ClientApi {
       InlineKeyboardMarkup? replyMarkup}) {
     final request = RequestSendInvoice.create(
         chatId: chatId,
+        messageThreadId: messageThreadId,
         title: title,
         description: description,
         payload: payload,
@@ -1568,6 +1690,7 @@ class ClientApi {
 
   Future<ResponseSendGame> sendGame(
       {required int chatId,
+      int? messageThreadId,
       required String gameShortName,
       bool? disableNotification,
       bool? protectContent,
@@ -1576,6 +1699,7 @@ class ClientApi {
       InlineKeyboardMarkup? replyMarkup}) {
     final request = RequestSendGame.create(
         chatId: chatId,
+        messageThreadId: messageThreadId,
         gameShortName: gameShortName,
         disableNotification: disableNotification,
         protectContent: protectContent,

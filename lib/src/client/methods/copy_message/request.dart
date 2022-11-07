@@ -13,6 +13,7 @@ class RequestCopyMessage extends Request {
       {
       // int | String
       required Object chatId,
+      int? messageThreadId,
       // int | String
       required Object fromChatId,
       required int messageId,
@@ -27,6 +28,7 @@ class RequestCopyMessage extends Request {
       ReplyMarkup? replyMarkup}) {
     final requestParameters = RequestParametersCopyMessage(
         chatId: chatId,
+        messageThreadId: messageThreadId,
         fromChatId: fromChatId,
         messageId: messageId,
         caption: caption,

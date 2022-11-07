@@ -6,6 +6,7 @@ import '../../request_parameters.dart';
 class RequestParametersSendVideoNote implements RequestParameters {
   // int | String
   final Object chatId;
+  final int? messageThreadId;
   // InputFile | String
   final Object videoNote;
   final int? duration;
@@ -23,6 +24,7 @@ class RequestParametersSendVideoNote implements RequestParameters {
 
   RequestParametersSendVideoNote(
       {required this.chatId,
+      this.messageThreadId,
       required this.videoNote,
       this.duration,
       this.length,
@@ -37,6 +39,9 @@ class RequestParametersSendVideoNote implements RequestParameters {
   Map<String, dynamic> toJson() {
     Map<String, dynamic> json = {};
     json['chat_id'] = chatId;
+    if (messageThreadId != null) {
+      json['message_thread_id'] = messageThreadId;
+    }
     json['video_note'] = videoNote;
     if (duration != null) {
       json['duration'] = duration;
@@ -69,6 +74,9 @@ class RequestParametersSendVideoNote implements RequestParameters {
   Map<String, dynamic> toFormData() {
     Map<String, dynamic> formData = {};
     formData['chat_id'] = chatId.toString();
+    if (messageThreadId != null) {
+      formData['message_thread_id'] = messageThreadId.toString();
+    }
     formData['video_note'] = videoNote;
     if (duration != null) {
       formData['duration'] = duration.toString();

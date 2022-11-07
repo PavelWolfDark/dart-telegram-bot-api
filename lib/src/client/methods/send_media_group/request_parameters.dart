@@ -10,6 +10,7 @@ import '../../request_parameters.dart';
 class RequestParametersSendMediaGroup implements RequestParameters {
   // int | String
   final Object chatId;
+  final int? messageThreadId;
   final List<InputMedia> media;
   final bool? disableNotification;
   final bool? protectContent;
@@ -33,6 +34,7 @@ class RequestParametersSendMediaGroup implements RequestParameters {
 
   RequestParametersSendMediaGroup(
       {required this.chatId,
+      this.messageThreadId,
       required this.media,
       this.disableNotification,
       this.protectContent,
@@ -43,6 +45,9 @@ class RequestParametersSendMediaGroup implements RequestParameters {
   Map<String, dynamic> toJson() {
     Map<String, dynamic> json = {};
     json['chat_id'] = chatId;
+    if (messageThreadId != null) {
+      json['message_thread_id'] = messageThreadId;
+    }
     List<Map<String, dynamic>> jsonMedia = [];
     for (final inputMedia in media) {
       jsonMedia.add(inputMedia.toJson());
@@ -68,6 +73,9 @@ class RequestParametersSendMediaGroup implements RequestParameters {
     Map<String, dynamic> formData = {};
     int attachedFileId = 0;
     formData['chat_id'] = chatId.toString();
+    if (messageThreadId != null) {
+      formData['message_thread_id'] = messageThreadId.toString();
+    }
     List<Map<String, dynamic>> jsonMedia = [];
     for (final inputMedia in media) {
       final jsonInputMedia = inputMedia.toJson();
