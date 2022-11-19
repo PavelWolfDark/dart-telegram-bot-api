@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../models/input_file.dart';
-import 'client_api.dart';
 import 'error.dart';
 import 'response.dart';
 import 'request.dart';
@@ -14,7 +13,6 @@ class Client {
   final void Function(Request request)? _handleRequest;
   final void Function(Response response)? _handleResponse;
   final void Function(ApiError error)? _handleError;
-  late final ClientApi api;
 
   Client(String token,
       {Uri? baseUrl,
@@ -25,11 +23,9 @@ class Client {
         _baseUrl = baseUrl ?? Client._telegramApiUrl,
         _handleRequest = onRequest,
         _handleResponse = onResponse,
-        _handleError = onError {
-    api = ClientApi(this);
-  }
+        _handleError = onError;
 
-  Future<T> send<T>(Request request) async {
+  Future<Response> send(Request request) async {
     if (_handleRequest != null) {
       _handleRequest!(request);
     }
@@ -81,7 +77,7 @@ class Client {
       error.withResponse(response);
       _handleError!(error);
     }
-    return response as T;
+    return response;
   }
 
   void close() {

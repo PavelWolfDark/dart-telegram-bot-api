@@ -70,9 +70,9 @@ class Response<T> {
     _request ??= request;
   }
 
-  resultOrThrowIfError() {
+  T resultOrThrowIfError() {
     if (error == null) {
-      return result;
+      return result!;
     }
     throw error!..withResponse(this);
   }
